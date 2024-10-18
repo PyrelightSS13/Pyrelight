@@ -896,7 +896,7 @@
 
 /mob/proc/toggle_throw_mode(force_set)
 	in_throw_mode = isnull(force_set) ? !in_throw_mode : force_set
-	throw_icon?.icon_state = "act_throw_[in_throw_mode ? "on" : "off"]"
+	throw_icon?.update_icon()
 
 /mob/proc/toggle_antag_pool()
 	set name = "Toggle Add-Antag Candidacy"

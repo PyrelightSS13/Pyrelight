@@ -211,6 +211,7 @@
 #include "code\_onclick\hud\screen\screen_intent.dm"
 #include "code\_onclick\hud\screen\screen_internal.dm"
 #include "code\_onclick\hud\screen\screen_inventory.dm"
+#include "code\_onclick\hud\screen\screen_inventory_hands.dm"
 #include "code\_onclick\hud\screen\screen_lighting.dm"
 #include "code\_onclick\hud\screen\screen_maneuver.dm"
 #include "code\_onclick\hud\screen\screen_module.dm"

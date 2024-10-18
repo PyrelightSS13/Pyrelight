@@ -194,6 +194,12 @@ var/global/const/MAP_HAS_RANK   = 2		//Rank system, also togglable
 	var/background_categories_generated = FALSE
 	var/list/_background_categories
 
+	var/default_ui_style
+
+/datum/map/New()
+	..()
+	default_ui_style ||= DEFAULT_UI_STYLE
+
 /datum/map/proc/get_background_categories()
 	if(!background_categories_generated)
 		if(isnull(_background_categories))

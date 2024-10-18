@@ -831,8 +831,7 @@
 			if(istype(module, /obj/item/robot_module/janitor))
 				loc.clean()
 		if(client)
-			var/turf/above = GetAbove(src)
-			up_hint.icon_state = "uphint[!!(above && TURF_IS_MIMICKING(above))]"
+			up_hint.update_icon()
 
 /mob/living/silicon/robot/proc/UnlinkSelf()
 	disconnect_from_ai()

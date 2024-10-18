@@ -1,9 +1,10 @@
 /obj/screen/intent
-	name              = "intent"
-	icon              = 'icons/mob/screen/styles/intents.dmi'
-	icon_state        = "intents"
-	screen_loc        = ui_acti
-	requires_ui_style = FALSE
+	name                 = "intent"
+	icon                 = 'icons/mob/screen/styles/intents.dmi'
+	icon_state           = "intents"
+	screen_loc           = ui_acti
+	requires_ui_style    = FALSE
+	apply_screen_overlay = FALSE
 
 /obj/screen/intent/Initialize(mapload, mob/_owner, decl/ui_style/ui_style, ui_color, ui_alpha, ui_cat)
 	. = ..()
@@ -37,7 +38,7 @@
 			overlay.pixel_y = 16
 
 /obj/screen/intent/on_update_icon()
-	cut_overlays()
+	..()
 	var/mob/owner = owner_ref?.resolve()
 	if(!istype(owner) || QDELETED(owner))
 		return
