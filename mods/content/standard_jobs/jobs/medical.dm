@@ -1,5 +1,6 @@
 /datum/job/standard/cmo
 	title = "Chief Medical Officer"
+	hud_icon_state = "hudcmo"
 	head_position = 1
 	department_types = list(
 		/decl/department/medical,
@@ -75,6 +76,7 @@
 
 /datum/job/standard/doctor
 	title = "Medical Doctor"
+	hud_icon_state = "hudmed"
 	department_types = list(/decl/department/medical)
 	minimal_player_age = 3
 	total_positions = 5
@@ -128,6 +130,7 @@
 
 /datum/job/standard/chemist
 	title = "Pharmacist"
+	hud_icon_state = "hudpharmacist"
 	department_types = list(/decl/department/medical)
 	minimal_player_age = 7
 	total_positions = 2
@@ -163,6 +166,7 @@
 
 /datum/job/counselor
 	title = "Counselor"
+	hud_icon_state = "hudmed"
 	alt_titles = list("Mentalist")
 	department_types = list(/decl/department/medical)
 	total_positions = 1

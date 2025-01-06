@@ -7,7 +7,7 @@
 	create_record = FALSE
 	total_positions = 4
 	outfit_type = /decl/outfit/job/survivor
-	hud_icon = "hudblank"
+	hud_icon_state = "hudblank"
 	available_by_default = FALSE
 	allowed_ranks = null
 	allowed_branches = null

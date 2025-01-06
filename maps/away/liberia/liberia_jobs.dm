@@ -11,7 +11,7 @@
 	info = "You are free traders who have drifted into unknown distances in search of profit. Travel, trade, make profit!"
 	supervisors = "the invisible hand of the market"
 	selection_color = "#515151"
-
+	_hud_icon = 'maps/away/liberia/hud.dmi'
 	ideal_character_age = 20
 	minimal_player_age = 7
 

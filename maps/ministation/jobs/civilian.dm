@@ -4,7 +4,7 @@
 	alt_titles = list("Technical Recruit","Medical Recruit","Research Recruit","Visitor")
 	outfit_type = /decl/outfit/job/ministation_assistant
 	event_categories = list(ASSIGNMENT_GARDENER)
-	hud_icon = "hudassistant"
+	hud_icon_state = "hudassistant"
 
 /decl/outfit/job/ministation_assistant
 	name = "Job - Ministation Assistant"

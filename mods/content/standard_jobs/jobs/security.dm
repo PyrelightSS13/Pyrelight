@@ -1,5 +1,6 @@
 /datum/job/standard/hos
 	title = "Head of Security"
+	hud_icon_state = "hudhos"
 	head_position = 1
 	department_types = list(
 		/decl/department/security,
@@ -93,6 +94,7 @@
 /datum/job/standard/warden
 	title = "Warden"
 	department_types = list(/decl/department/security)
+	hud_icon_state = "hudwarden"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of security"
@@ -141,7 +143,7 @@
 /datum/job/standard/detective
 	title = "Detective"
 	department_types = list(/decl/department/security)
-
+	hud_icon_state = "huddetective"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the head of security"
@@ -188,6 +190,7 @@
 
 /datum/job/standard/officer
 	title = "Security Officer"
+	hud_icon_state = "hudsec"
 	department_types = list(/decl/department/security)
 	total_positions = 4
 	spawn_positions = 4

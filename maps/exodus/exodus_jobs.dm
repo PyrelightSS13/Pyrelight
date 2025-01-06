@@ -9,7 +9,6 @@
 /datum/map/exodus
 	default_job_type = /datum/job/standard/assistant
 	default_department_type = /decl/department/civilian
-	id_hud_icons = 'maps/exodus/hud.dmi'
 	allowed_jobs = list(
 		/datum/job/standard/captain,
 		/datum/job/hop,

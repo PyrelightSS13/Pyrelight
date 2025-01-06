@@ -1,5 +1,6 @@
 /datum/job/standard/captain
 	title = "Captain"
+	hud_icon_state = "hudcaptain"
 	head_position = 1
 	department_types = list(/decl/department/command)
 	total_positions = 1
@@ -43,6 +44,7 @@
 
 /datum/job/hop
 	title = "Head of Personnel"
+	hud_icon_state = "hudhop"
 	head_position = 1
 	department_types = list(
 		/decl/department/command,

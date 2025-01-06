@@ -1,5 +1,6 @@
 /datum/job/standard/chief_engineer
 	title = "Chief Engineer"
+	hud_icon_state = "hudce"
 	head_position = 1
 	department_types = list(
 		/decl/department/engineering,
@@ -91,7 +92,7 @@
 /datum/job/standard/engineer
 	title = "Engineer"
 	department_types = list(/decl/department/engineering)
-
+	hud_icon_state = "hudengineer"
 	total_positions = 8
 	spawn_positions = 7
 	supervisors = "the chief engineer"

@@ -11,7 +11,7 @@
 	economic_power = 0
 	outfit_type = /decl/outfit/job/silicon/ai
 	loadout_allowed = FALSE
-	hud_icon = "hudblank"
+	hud_icon_state = "hudblank"
 	skill_points = 0
 	no_skill_buffs = TRUE
 	guestbanned = 1
@@ -58,7 +58,7 @@
 	economic_power = 0
 	loadout_allowed = FALSE
 	outfit_type = /decl/outfit/job/silicon/cyborg
-	hud_icon = "hudblank"
+	hud_icon_state = "hudblank"
 	skill_points = 0
 	no_skill_buffs = TRUE
 	guestbanned = 1

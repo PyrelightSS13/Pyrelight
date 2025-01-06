@@ -104,7 +104,9 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/default_law_type = /datum/ai_laws/asimov  // The default lawset use by synth units, if not overriden by their laws var.
 	var/security_state = /decl/security_state/default // The default security state system to use.
 
-	var/id_hud_icons = 'icons/mob/hud.dmi' // Used by the ID HUD (primarily sechud) overlay.
+	var/hud_icons         = 'icons/screen/hud.dmi' // Used by the ID HUD (primarily sechud) overlay.
+	var/implant_hud_icons = 'icons/screen/hud_implants.dmi'
+	var/med_hud_icons     = 'icons/screen/hud_med.dmi'
 
 	var/num_exoplanets = 0
 	var/force_exoplanet_type // Used to override exoplanet weighting and always pick the same exoplanet.
