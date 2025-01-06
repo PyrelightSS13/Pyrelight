@@ -1,4 +1,4 @@
-/datum/job/engineer/ministation
+/datum/job/standard/engineer/ministation
 	title = "Station Engineer"
 	supervisors = "the Head Engineer"
 	total_positions = 2
@@ -32,7 +32,7 @@
 	skill_points = 30
 	alt_titles = list("Atmospheric Technician", "Electrician", "Maintenance Technician")
 
-/datum/job/chief_engineer/ministation
+/datum/job/standard/chief_engineer/ministation
 	title = "Head Engineer"
 	hud_icon = "hudchiefengineer"
 	access = list(

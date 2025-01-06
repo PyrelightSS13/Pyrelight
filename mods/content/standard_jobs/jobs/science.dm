@@ -1,4 +1,4 @@
-/datum/job/rd
+/datum/job/standard/rd
 	title = "Chief Science Officer"
 	head_position = 1
 	department_types = list(
@@ -74,7 +74,7 @@
 	skill_points = 30
 	event_categories = list(ASSIGNMENT_SCIENTIST)
 
-/datum/job/scientist
+/datum/job/standard/scientist
 	title = "Scientist"
 	department_types = list(/decl/department/science)
 	total_positions = 6
@@ -122,7 +122,7 @@
 	skill_points = 20
 	event_categories = list(ASSIGNMENT_SCIENTIST)
 
-/datum/job/roboticist
+/datum/job/standard/roboticist
 	title = "Roboticist"
 	department_types = list(/decl/department/science)
 	total_positions = 2

@@ -1,4 +1,4 @@
-/datum/job/hos
+/datum/job/standard/hos
 	title = "Head of Security"
 	head_position = 1
 	department_types = list(
@@ -85,12 +85,12 @@
 	)
 	event_categories = list(ASSIGNMENT_SECURITY)
 
-/datum/job/hos/equip_job(var/mob/living/human/H)
+/datum/job/standard/hos/equip_job(var/mob/living/human/H)
 	. = ..()
 	if(.)
 		H.implant_loyalty(H)
 
-/datum/job/warden
+/datum/job/standard/warden
 	title = "Warden"
 	department_types = list(/decl/department/security)
 	total_positions = 1
@@ -138,7 +138,7 @@
 		/datum/computer_file/program/camera_monitor
 	)
 
-/datum/job/detective
+/datum/job/standard/detective
 	title = "Detective"
 	department_types = list(/decl/department/security)
 
@@ -186,7 +186,7 @@
 		/datum/computer_file/program/camera_monitor
 	)
 
-/datum/job/officer
+/datum/job/standard/officer
 	title = "Security Officer"
 	department_types = list(/decl/department/security)
 	total_positions = 4

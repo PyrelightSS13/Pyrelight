@@ -1,4 +1,4 @@
-/datum/job/assistant
+/datum/job/standard/assistant
 	title = "Assistant"
 	total_positions = -1
 	spawn_positions = -1
@@ -10,7 +10,7 @@
 	outfit_type = /decl/outfit/job/generic/assistant
 	department_types = list(/decl/department/civilian)
 
-/datum/job/assistant/get_access()
+/datum/job/standard/assistant/get_access()
 	if(get_config_value(/decl/config/toggle/assistant_maint))
 		return list(access_maint_tunnels)
 	return list()

@@ -1,4 +1,4 @@
-/datum/job/assistant/ministation
+/datum/job/standard/assistant/ministation
 	title = "Recruit"
 	supervisors = "absolutely everyone"
 	alt_titles = list("Technical Recruit","Medical Recruit","Research Recruit","Visitor")

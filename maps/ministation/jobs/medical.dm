@@ -1,4 +1,4 @@
-/datum/job/doctor/ministation
+/datum/job/standard/doctor/ministation
 	title = "Medical Doctor"
 	supervisors = "the Head Doctor"
 	total_positions = 2
@@ -35,7 +35,7 @@
 	)
 	outfit_type = /decl/outfit/job/ministation/doctor
 
-/datum/job/cmo/ministation
+/datum/job/standard/cmo/ministation
 	title = "Head Doctor"
 	supervisors = "the Captain and your own ethics"
 	outfit_type = /decl/outfit/job/ministation/doctor/head

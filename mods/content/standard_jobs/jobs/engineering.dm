@@ -1,4 +1,4 @@
-/datum/job/chief_engineer
+/datum/job/standard/chief_engineer
 	title = "Chief Engineer"
 	head_position = 1
 	department_types = list(
@@ -88,7 +88,7 @@
 	)
 	event_categories = list(ASSIGNMENT_ENGINEER)
 
-/datum/job/engineer
+/datum/job/standard/engineer
 	title = "Engineer"
 	department_types = list(/decl/department/engineering)
 

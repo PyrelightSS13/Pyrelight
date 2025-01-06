@@ -1,4 +1,4 @@
-/datum/job/captain
+/datum/job/standard/captain
 	title = "Captain"
 	head_position = 1
 	department_types = list(/decl/department/command)
@@ -33,12 +33,12 @@
 		/datum/computer_file/program/reports
 	)
 
-/datum/job/captain/equip_job(var/mob/living/human/H)
+/datum/job/standard/captain/equip_job(var/mob/living/human/H)
 	. = ..()
 	if(.)
 		H.implant_loyalty(src)
 
-/datum/job/captain/get_access()
+/datum/job/standard/captain/get_access()
 	return get_all_station_access()
 
 /datum/job/hop

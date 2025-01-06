@@ -1,4 +1,4 @@
-/datum/job/cmo
+/datum/job/standard/cmo
 	title = "Chief Medical Officer"
 	head_position = 1
 	department_types = list(
@@ -73,7 +73,7 @@
 	)
 	event_categories = list(ASSIGNMENT_MEDICAL)
 
-/datum/job/doctor
+/datum/job/standard/doctor
 	title = "Medical Doctor"
 	department_types = list(/decl/department/medical)
 	minimal_player_age = 3
@@ -126,7 +126,7 @@
 	skill_points = 22
 	event_categories = list(ASSIGNMENT_MEDICAL)
 
-/datum/job/chemist
+/datum/job/standard/chemist
 	title = "Pharmacist"
 	department_types = list(/decl/department/medical)
 	minimal_player_age = 7

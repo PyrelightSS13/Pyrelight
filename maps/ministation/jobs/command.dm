@@ -1,4 +1,4 @@
-/datum/job/captain/ministation
+/datum/job/standard/captain/ministation
 	supervisors = "your profit margin, your conscience, and the watchful eye of the Tradehouse Rep"
 	outfit_type = /decl/outfit/job/ministation/captain
 	min_skill = list(
@@ -13,7 +13,7 @@
 	)
 	skill_points = 40
 
-/datum/job/captain/ministation/equip_job(var/mob/living/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
+/datum/job/standard/captain/ministation/equip_job(var/mob/living/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
 	. = ..()
 	if(H)
 		H.verbs |= /mob/proc/freetradeunion_rename_company
