@@ -746,7 +746,7 @@
 			if(I)
 				var/datum/job/J = SSjobs.get_by_title(I.GetJobName())
 				if(J)
-					holder.icon       = J._hud_icon
+					holder.icon       = J.hud_icon
 					holder.icon_state = J.hud_icon_state
 
 		hud_list[ID_HUD] = holder

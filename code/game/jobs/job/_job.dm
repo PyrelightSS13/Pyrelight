@@ -34,7 +34,7 @@
 	var/announced = TRUE                      // If their arrival is announced on radio
 	var/latejoin_at_spawnpoints               // If this job should use roundstart spawnpoints for latejoin (offstation jobs etc)
 	var/forced_spawnpoint                     // If set to a spawnpoint name, will use that spawn point for joining as this job.
-	var/_hud_icon                             // icon used for secHUD overlay
+	var/hud_icon                             // icon used for secHUD overlay
 	var/hud_icon_state                        // icon state used for secHUD overlay
 
 	// A list of string IDs for keys to grant on join.
@@ -83,8 +83,8 @@
 		total_positions = 0
 		spawn_positions = 0
 
-	if(!_hud_icon)
-		_hud_icon = global.using_map.hud_icons
+	if(!hud_icon)
+		hud_icon = global.using_map.hud_icons
 	if(!hud_icon_state)
 		hud_icon_state = "hud[ckey(title)]"
 

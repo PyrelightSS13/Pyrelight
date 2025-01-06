@@ -12,7 +12,7 @@
 	access = list()
 	minimal_access = list()
 	outfit_type = /decl/outfit/job/tourist
-	_hud_icon =  = 'maps/example/hud.dmi'
+	hud_icon = 'maps/example/hud.dmi'
 	department_types = list(
 		/decl/department/example
 	)

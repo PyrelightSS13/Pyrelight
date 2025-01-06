@@ -2,7 +2,7 @@
 	title = "Tradehouse Representative"
 	alt_titles = list("Narc")
 	hud_icon_state = "hudnarc"
-	_hud_icon = 'maps/ministation/hud.dmi'
+	hud_icon = 'maps/ministation/hud.dmi'
 	spawn_positions = 1
 	total_positions = 2
 	req_admin_notify = 1

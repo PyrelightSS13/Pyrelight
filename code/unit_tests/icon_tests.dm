@@ -313,7 +313,7 @@
 		"hud_imp_loyal"    = "Loyalty",
 		"hud_imp_unknown"  = "Unknown",
 		"hud_imp_tracking" = "Tracking",
-		"hud_imp_chemical" = "Chemical",
+		"hud_imp_chem"     = "Chemical",
 	)
 	for(var/implant_hud_state in implant_hud_states)
 		if(!check_state_in_icon(implant_hud_state, global.using_map.implant_hud_icons))
@@ -342,14 +342,14 @@
 		"huddead"    = "Dead mob"
 	)
 	for(var/global_state in global_states)
-		if(!check_state_in_icon(global_states, global.using_map.hud_icons))
+		if(!check_state_in_icon(global_state, global.using_map.hud_icons))
 			log_bad("Sanity Check - Missing map [global_states[global_state]] HUD icon_state '[global_state]' from icon [global.using_map.hud_icons]")
 			failed_sanity_checks++
 
 	for(var/job_name in SSjobs.titles_to_datums)
 		var/datum/job/job = SSjobs.titles_to_datums[job_name]
-		if(!check_state_in_icon(job.hud_icon_state, job._hud_icon))
-			log_bad("[job.title] - Missing HUD icon: [job.hud_icon_state] in icon [job._hud_icon]")
+		if(!check_state_in_icon(job.hud_icon_state, job.hud_icon))
+			log_bad("[job.title] - Missing HUD icon: [job.hud_icon_state] in icon [job.hud_icon]")
 			failed_jobs++
 
 	if(failed_sanity_checks || failed_jobs)

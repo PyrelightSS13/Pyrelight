@@ -55,7 +55,12 @@
 	if(islist(blacklisted_species) && !length(blacklisted_species))
 		blacklisted_species |= SSmodpacks.default_submap_blacklisted_species
 
-	if(!abstract_job)
+	if(abstract_job)
+		if(!hud_icon)
+			hud_icon = global.using_map.hud_icons
+		if(!hud_icon_state)
+			hud_icon_state = "hud[ckey(title)]"
+	else
 		spawnpoints = list()
 		owner = _owner
 		..()

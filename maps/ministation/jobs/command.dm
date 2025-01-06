@@ -1,7 +1,7 @@
 /datum/job/standard/captain/ministation
 	supervisors = "your profit margin, your conscience, and the watchful eye of the Tradehouse Rep"
 	outfit_type = /decl/outfit/job/ministation/captain
-	_hud_icon = 'maps/ministation/hud.dmi'
+	hud_icon = 'maps/ministation/hud.dmi'
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_WEAPONS  = SKILL_ADEPT,
@@ -37,7 +37,7 @@
 /datum/job/hop/ministation
 	title = "Lieutenant"
 	outfit_type = /decl/outfit/job/ministation/hop
-	_hud_icon = 'maps/ministation/hud.dmi'
+	hud_icon = 'maps/ministation/hud.dmi'
 	hud_icon_state = "hudlieutenant"
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
