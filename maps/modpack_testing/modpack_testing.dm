@@ -14,7 +14,7 @@
 
 	#include "../../mods/content/mundane.dm"
 	#include "../../mods/content/scaling_descriptors.dm"
-
+	#include "../../mods/content/tabloids/_tabloids.dme"
 	#include "../../mods/content/dungeon_loot/_dungeon_loot.dme"
 	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/byond_membership/_byond_membership.dm"
