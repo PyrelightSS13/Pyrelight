@@ -30,7 +30,7 @@ var/global/list/exodus_paperwork_end_areas = list()
 	paperwork_types = list(/obj/item/paperwork/exodus)
 	signatory_job_list = list(
 		/datum/job/standard/captain,
-		/datum/job/hop,
+		/datum/job/standard/hop,
 		/datum/job/standard/cmo,
 		/datum/job/standard/chief_engineer,
 		/datum/job/standard/rd,

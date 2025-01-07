@@ -11,23 +11,23 @@
 	default_department_type = /decl/department/civilian
 	allowed_jobs = list(
 		/datum/job/standard/captain,
-		/datum/job/hop,
-		/datum/job/chaplain,
-		/datum/job/bartender,
-		/datum/job/chef,
-		/datum/job/hydro,
-		/datum/job/qm,
-		/datum/job/cargo_tech,
-		/datum/job/mining,
-		/datum/job/janitor,
-		/datum/job/librarian,
-		/datum/job/lawyer,
+		/datum/job/standard/hop,
+		/datum/job/standard/chaplain,
+		/datum/job/standard/bartender,
+		/datum/job/standard/chef,
+		/datum/job/standard/hydro,
+		/datum/job/standard/qm,
+		/datum/job/standard/cargo_tech,
+		/datum/job/standard/mining,
+		/datum/job/standard/janitor,
+		/datum/job/standard/librarian,
+		/datum/job/standard/lawyer,
 		/datum/job/standard/chief_engineer,
 		/datum/job/standard/engineer,
 		/datum/job/standard/cmo,
 		/datum/job/standard/doctor,
 		/datum/job/standard/chemist,
-		/datum/job/counselor,
+		/datum/job/standard/counselor,
 		/datum/job/standard/rd,
 		/datum/job/standard/scientist,
 		/datum/job/standard/roboticist,
@@ -44,44 +44,44 @@
 			/datum/job/standard/computer,
 			/datum/job/standard/robot,
 			/datum/job/standard/assistant,
-			/datum/job/janitor,
-			/datum/job/chef,
-			/datum/job/bartender,
-			/datum/job/cargo_tech,
+			/datum/job/standard/janitor,
+			/datum/job/standard/chef,
+			/datum/job/standard/bartender,
+			/datum/job/standard/cargo_tech,
 			/datum/job/standard/engineer,
 			/datum/job/standard/roboticist,
 			/datum/job/standard/chemist,
 			/datum/job/standard/scientist,
-			/datum/job/mining
+			/datum/job/standard/mining
 		),
 		/decl/species/utility_frame = list(
 			/datum/job/standard/computer,
 			/datum/job/standard/robot,
 			/datum/job/standard/assistant,
-			/datum/job/janitor,
-			/datum/job/chef,
-			/datum/job/bartender,
-			/datum/job/cargo_tech,
+			/datum/job/standard/janitor,
+			/datum/job/standard/chef,
+			/datum/job/standard/bartender,
+			/datum/job/standard/cargo_tech,
 			/datum/job/standard/engineer,
 			/datum/job/standard/roboticist,
 			/datum/job/standard/chemist,
 			/datum/job/standard/scientist,
-			/datum/job/mining
+			/datum/job/standard/mining
 		),
 		/decl/species/serpentid = list(
 			/datum/job/standard/computer,
 			/datum/job/standard/robot,
 			/datum/job/standard/assistant,
-			/datum/job/janitor,
-			/datum/job/chef,
-			/datum/job/bartender,
-			/datum/job/cargo_tech,
+			/datum/job/standard/janitor,
+			/datum/job/standard/chef,
+			/datum/job/standard/bartender,
+			/datum/job/standard/cargo_tech,
 			/datum/job/standard/roboticist,
 			/datum/job/standard/chemist
 		)
 	)
 
-#define HUMAN_ONLY_JOBS /datum/job/standard/captain, /datum/job/hop, /datum/job/standard/hos
+#define HUMAN_ONLY_JOBS /datum/job/standard/captain, /datum/job/standard/hop, /datum/job/standard/hos
 	species_to_job_blacklist = list(
 		/decl/species/unathi = list(
 			HUMAN_ONLY_JOBS

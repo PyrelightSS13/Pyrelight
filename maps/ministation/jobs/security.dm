@@ -57,7 +57,6 @@
 
 /datum/job/standard/hos/ministation
 	outfit_type = /decl/outfit/job/ministation/security/head
-	hud_icon_state = "hudhos"
 	access = list(
 		access_security,
 		access_sec_doors,

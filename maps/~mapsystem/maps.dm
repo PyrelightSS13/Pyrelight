@@ -258,10 +258,9 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	if(!allowed_jobs)
 		allowed_jobs = list()
-		for(var/jtype in subtypesof(/datum/job))
-			var/datum/job/job = jtype
-			if(initial(job.available_by_default))
-				allowed_jobs += jtype
+		for(var/datum/job/job as anything in subtypesof(/datum/job))
+			if(!TYPE_IS_ABSTRACT(job) && job::available_by_default)
+				allowed_jobs += job
 
 	if(ispath(default_job_type, /datum/job))
 		var/datum/job/J = default_job_type

@@ -41,7 +41,6 @@
 	outfit_type = /decl/outfit/job/ministation/doctor/head
 	alt_titles = list("Chief Medical Officer", "Head Surgeon")
 	skill_points = 38
-	hud_icon_state = "hudheaddoctor"
 	access = list(
 		access_medical,
 		access_medical_equip,

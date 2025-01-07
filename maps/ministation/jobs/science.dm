@@ -5,7 +5,6 @@
 	spawn_positions = 1
 	total_positions = 2
 	outfit_type = /decl/outfit/job/ministation/scientist
-	hud_icon_state = "hudscientist"
 	skill_points = 34
 
 /datum/job/standard/rd/ministation
@@ -27,7 +26,6 @@
 		SKILL_SCIENCE  = SKILL_MAX
 	)
 	skill_points = 40
-	hud_icon_state = "hudheadscientist"
 	access = list(
 		access_rd,
 		access_bridge,

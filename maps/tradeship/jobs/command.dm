@@ -55,6 +55,7 @@
 /datum/job/tradeship_first_mate
 	title = "First Mate"
 	supervisors = "the Captain"
+	hud_icon = 'maps/tradeship/hud.dmi'
 	outfit_type = /decl/outfit/job/tradeship/mate
 	head_position = 1
 	department_types = list(

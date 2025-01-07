@@ -22,6 +22,7 @@ var/global/list/symbiote_starting_points = list()
 	economic_power = 0
 	defer_roundstart_spawn = TRUE
 	hud_icon_state = "hudblank"
+	hud_icon = null
 	outfit_type = /decl/outfit/job/symbiote_host
 	create_record = FALSE
 	var/check_whitelist // = "Symbiote"

@@ -164,7 +164,7 @@
 	)
 	skill_points = 16
 
-/datum/job/counselor
+/datum/job/standard/counselor
 	title = "Counselor"
 	hud_icon_state = "hudmed"
 	alt_titles = list("Mentalist")
@@ -204,7 +204,7 @@
 	give_psionic_implant_on_join = FALSE
 
 #ifdef MODPACK_PSIONICS
-/datum/job/counselor/equip_job(var/mob/living/human/H)
+/datum/job/standard/counselor/equip_job(var/mob/living/human/H)
 	if(H.mind.role_alt_title == "Counselor")
 		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
 	if(H.mind.role_alt_title == "Mentalist")

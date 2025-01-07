@@ -34,7 +34,7 @@
 		command_announcement.Announce("Congratulations to all members of [capitalize(global.using_map.company_name)] on the new name. Their rebranding has changed the [global.using_map.company_short] market value by [0.01*rand(-10,10)]%.", "Trade Union Name Change")
 	verbs -= /mob/proc/freetradeunion_rename_company
 
-/datum/job/hop/ministation
+/datum/job/standard/hop/ministation
 	title = "Lieutenant"
 	outfit_type = /decl/outfit/job/ministation/hop
 	hud_icon = 'maps/ministation/hud.dmi'

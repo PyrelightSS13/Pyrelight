@@ -12,6 +12,7 @@
 	supervisors = "the invisible hand of the market"
 	selection_color = "#515151"
 	hud_icon = 'maps/away/liberia/hud.dmi'
+	hud_icon_state = "hudmerchant"
 	ideal_character_age = 20
 	minimal_player_age = 7
 

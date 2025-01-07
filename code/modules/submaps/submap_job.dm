@@ -8,6 +8,7 @@
 	total_positions = 4
 	outfit_type = /decl/outfit/job/survivor
 	hud_icon_state = "hudblank"
+	hud_icon = null
 	available_by_default = FALSE
 	allowed_ranks = null
 	allowed_branches = null

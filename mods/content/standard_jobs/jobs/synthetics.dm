@@ -12,6 +12,7 @@
 	outfit_type = /decl/outfit/job/silicon/ai
 	loadout_allowed = FALSE
 	hud_icon_state = "hudblank"
+	hud_icon = null
 	skill_points = 0
 	no_skill_buffs = TRUE
 	guestbanned = 1
@@ -59,6 +60,7 @@
 	loadout_allowed = FALSE
 	outfit_type = /decl/outfit/job/silicon/cyborg
 	hud_icon_state = "hudblank"
+	hud_icon = null
 	skill_points = 0
 	no_skill_buffs = TRUE
 	guestbanned = 1

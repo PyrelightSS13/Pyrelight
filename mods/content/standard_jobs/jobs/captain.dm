@@ -42,7 +42,7 @@
 /datum/job/standard/captain/get_access()
 	return get_all_station_access()
 
-/datum/job/hop
+/datum/job/standard/hop
 	title = "Head of Personnel"
 	hud_icon_state = "hudhop"
 	head_position = 1

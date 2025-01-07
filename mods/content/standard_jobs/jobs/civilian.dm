@@ -16,7 +16,7 @@
 		return list(access_maint_tunnels)
 	return list()
 
-/datum/job/chaplain
+/datum/job/standard/chaplain
 	title = "Chaplain"
 	hud_icon_state = "hudchaplain" // TODO: not always a crucifix
 	department_types = list(/decl/department/civilian)
@@ -44,7 +44,7 @@
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
 //Food
-/datum/job/bartender
+/datum/job/standard/bartender
 	title = "Bartender"
 	department_types = list(/decl/department/service)
 	hud_icon_state = "hudbartender"
@@ -71,7 +71,7 @@
 	    SKILL_CHEMISTRY = SKILL_BASIC
 	)
 
-/datum/job/chef
+/datum/job/standard/chef
 	title = "Chef"
 	hud_icon_state = "hudchef"
 	department_types = list(/decl/department/service)
@@ -93,7 +93,7 @@
 	    SKILL_CHEMISTRY = SKILL_BASIC
 	)
 
-/datum/job/hydro
+/datum/job/standard/hydro
 	title = "Gardener"
 	hud_icon_state = "hudgardener"
 	department_types = list(/decl/department/service)
@@ -116,7 +116,7 @@
 	event_categories = list(ASSIGNMENT_GARDENER)
 
 //Cargo
-/datum/job/qm
+/datum/job/standard/qm
 	title = "Quartermaster"
 	hud_icon_state = "hudqm"
 	department_types = list(/decl/department/supply)
@@ -162,7 +162,7 @@
 		/datum/computer_file/program/reports
 	)
 
-/datum/job/cargo_tech
+/datum/job/standard/cargo_tech
 	title = "Cargo Technician"
 	department_types = list(/decl/department/supply)
 	total_positions = 2
@@ -199,7 +199,7 @@
 		/datum/computer_file/program/reports
 	)
 
-/datum/job/mining
+/datum/job/standard/mining
 	title = "Shaft Miner"
 	hud_icon_state = "hudminer"
 	department_types = list(/decl/department/supply)
@@ -235,7 +235,7 @@
 		SKILL_PILOT    = SKILL_MAX
 	)
 
-/datum/job/janitor
+/datum/job/standard/janitor
 	title = "Janitor"
 	department_types = list(/decl/department/service)
 	total_positions = 1
@@ -270,7 +270,7 @@
 	event_categories = list(ASSIGNMENT_JANITOR)
 
 //More or less assistants
-/datum/job/librarian
+/datum/job/standard/librarian
 	title = "Librarian"
 	hud_icon_state = "hudlibrarian"
 	department_types = list(/decl/department/civilian)
@@ -291,7 +291,7 @@
 	skill_points = 20
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
-/datum/job/lawyer
+/datum/job/standard/lawyer
 	title = "Internal Affairs Agent"
 	hud_icon_state = "hudia"
 	department_types = list(/decl/department/support)
@@ -319,7 +319,7 @@
 	skill_points = 20
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
-/datum/job/lawyer/equip_job(var/mob/living/human/H)
+/datum/job/standard/lawyer/equip_job(var/mob/living/human/H)
 	. = ..()
 	if(.)
 		H.implant_loyalty(H)

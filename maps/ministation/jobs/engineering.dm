@@ -34,7 +34,6 @@
 
 /datum/job/standard/chief_engineer/ministation
 	title = "Head Engineer"
-	hud_icon_state = "hudchiefengineer"
 	access = list(
 		access_engine,
 		access_engine_equip,
