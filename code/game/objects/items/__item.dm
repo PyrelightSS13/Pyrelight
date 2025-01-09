@@ -775,7 +775,7 @@
 			. += wielded_parry_bonus
 
 /obj/item/proc/on_disarm_attempt(mob/target, mob/living/attacker)
-	var/force = get_attack_force(attacker)
+	var/force = get_attack_force(attacker, dry_run = TRUE)
 	if(force < 1)
 		return 0
 	if(!istype(attacker))
@@ -1008,7 +1008,7 @@ modules/mob/living/human/life.dm if you die, you will be zoomed out.
 		descriptors += "sharp"
 	if(edge)
 		descriptors += "edged"
-	if(get_attack_force() >= 10 && !sharp && !edge)
+	if(get_attack_force(dry_run = TRUE) >= 10 && !sharp && !edge)
 		descriptors += "heavy"
 	if(material)
 		descriptors += "made of [material.solid_name]"

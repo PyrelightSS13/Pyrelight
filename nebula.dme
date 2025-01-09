@@ -60,6 +60,7 @@
 #include "code\__defines\intent.dm"
 #include "code\__defines\interactions.dm"
 #include "code\__defines\inventory_sizes.dm"
+#include "code\__defines\item_effects.dm"
 #include "code\__defines\items_clothing.dm"
 #include "code\__defines\jobs.dm"
 #include "code\__defines\languages.dm"

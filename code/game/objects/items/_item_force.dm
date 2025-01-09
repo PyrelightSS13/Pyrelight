@@ -13,18 +13,20 @@
 	VAR_PROTECTED/_hardness_force_factor    = 0.25
 
 /obj/item/proc/get_max_weapon_force()
-	. = get_attack_force()
+	. = get_attack_force(dry_run = TRUE)
 	if(can_be_twohanded)
 		. = round(. * _wielded_force_multiplier)
 
-/obj/item/proc/get_attack_force(mob/living/user)
+// `dry_run` param is used for things like the grindstone modpack to avoid
+// depleting sharpness when not actually being used to attack.
+/obj/item/proc/get_attack_force(mob/living/user, dry_run = FALSE)
 	if(_base_attack_force <= 0 || (item_flags & ITEM_FLAG_NO_BLUDGEON))
 		return 0
 	if(isnull(_cached_attack_force))
 		update_attack_force()
 	if(_cached_attack_force <= 0)
 		return 0
-	return istype(user) ? user.modify_attack_force(src, _cached_attack_force, _wielded_force_multiplier) : _cached_attack_force
+	return istype(user) ? user.modify_attack_force(src, _cached_attack_force, _wielded_force_multiplier, dry_run) : _cached_attack_force
 
 // Existing hitby() code expects mobs, structures and machines to be thrown, it seems.
 /atom/movable/proc/get_thrown_attack_force()
@@ -108,10 +110,17 @@
 	return _cached_attack_force
 
 // TODO: consider strength, athletics, mob size
-/mob/living/proc/modify_attack_force(obj/item/weapon, supplied_force, wield_mult)
+// `dry_run` param used in grindstone modpack to avoid depleting sharpness on non-attacks.
+/mob/living/proc/modify_attack_force(obj/item/weapon, supplied_force, wield_mult, dry_run)
 	if(!istype(weapon) || !weapon.is_held_twohanded())
-		return supplied_force
-	return round(supplied_force * wield_mult)
+		. = supplied_force
+	else
+		. = supplied_force * wield_mult
+	var/list/item_effects = weapon.get_item_effects(IE_CAT_DAMAGE)
+	if(length(item_effects))
+		for(var/decl/item_effect/damage_effect as anything in item_effects)
+			. = damage_effect.modify_attack_damage(., weapon, src, parameters = item_effects[damage_effect])
+	return round(.)
 
 // Debug proc - leaving in for future work. Linter hates protected var access so leave commented.
 /*
