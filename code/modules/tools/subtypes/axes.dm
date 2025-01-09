@@ -3,8 +3,8 @@
 	desc                             = "A handheld tool for chopping things, wood, food, or people."
 	icon_state                       = "preview"
 	icon                             = 'icons/obj/items/tool/axes/handaxe.dmi'
-	sharp                            = TRUE
-	edge                             = TRUE
+	_sharp                           = TRUE
+	_edge                            = TRUE
 	handle_material                  = /decl/material/solid/organic/wood/oak
 	item_flags                       = ITEM_FLAG_IS_WEAPON
 	origin_tech                      = @'{"materials":2,"combat":1}'

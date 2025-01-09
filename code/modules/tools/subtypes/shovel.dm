@@ -5,8 +5,8 @@
 	icon_state         = "preview" // mapping preview icon
 	slot_flags         = SLOT_LOWER_BODY
 	w_class            = ITEM_SIZE_LARGE
-	edge               = TRUE
-	sharp              = TRUE
+	_edge              = TRUE
+	_sharp             = TRUE
 	attack_verb        = list("bashed", "bludgeoned", "thrashed", "whacked")
 	handle_material    = /decl/material/solid/organic/wood/oak
 	_base_attack_force = 8
@@ -36,8 +36,8 @@
 	icon                = 'icons/obj/items/tool/shovels/spade.dmi'
 	icon_state          = "preview" // mapping preview icon
 	w_class             = ITEM_SIZE_SMALL
-	edge                = FALSE
-	sharp               = FALSE
+	_edge               = FALSE
+	_sharp              = FALSE
 	slot_flags          = SLOT_LOWER_BODY
 	attack_verb         = list("bashed", "bludgeoned", "thrashed", "whacked")
 	material_alteration = 0

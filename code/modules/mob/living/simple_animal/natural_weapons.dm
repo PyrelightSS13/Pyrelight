@@ -31,7 +31,7 @@
 	attack_verb = list("bitten")
 	hitsound = 'sound/weapons/bite.ogg'
 	_base_attack_force = 10
-	sharp = TRUE
+	_sharp = TRUE
 
 /obj/item/natural_weapon/bite/weak
 	_base_attack_force = 5
@@ -49,8 +49,8 @@
 	name = "claws"
 	attack_verb = list("mauled", "clawed", "slashed")
 	_base_attack_force = 10
-	sharp = TRUE
-	edge = TRUE
+	_sharp = TRUE
+	_edge = TRUE
 
 /obj/item/natural_weapon/claws/strong
 	_base_attack_force = 25
@@ -77,14 +77,14 @@
 	gender = NEUTER
 	attack_verb = list("sliced")
 	atom_damage_type =  BRUTE
-	edge = TRUE
+	_edge = TRUE
 	show_in_message = TRUE
 
 /obj/item/natural_weapon/beak
 	name = "beak"
 	gender = NEUTER
 	attack_verb = list("pecked", "jabbed", "poked")
-	sharp = TRUE
+	_sharp = TRUE
 
 /obj/item/natural_weapon/large
 	_base_attack_force = 15

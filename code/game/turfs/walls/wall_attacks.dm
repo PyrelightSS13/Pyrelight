@@ -133,7 +133,7 @@
 				return TRUE
 		else
 			var/force = W.get_attack_force(user)
-			if((!is_sharp(W) && force >= 10) || force >= 20)
+			if((!W.is_sharp() && !W.has_edge() && force >= 10) || force >= 20)
 				to_chat(user, "<span class='notice'>\The [src] crumbles away under the force of your [W.name].</span>")
 				physically_destroyed()
 				return TRUE

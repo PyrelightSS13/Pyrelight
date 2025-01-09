@@ -197,14 +197,14 @@ meteor_act
 		return
 
 	//make non-sharp low-force weapons less likely to be bloodied
-	if(W.sharp || prob(effective_force*4))
+	if(W.is_sharp() || prob(effective_force*4))
 		if(!(W.atom_flags & ATOM_FLAG_NO_BLOOD))
 			W.add_blood(src)
 	else
 		return //if the weapon itself didn't get bloodied than it makes little sense for the target to be bloodied either
 
 	//getting the weapon bloodied is easier than getting the target covered in blood, so run prob() again
-	if(prob(33 + W.sharp*10))
+	if(prob(33 + W.is_sharp() * 10))
 		var/turf/location = loc
 		if(istype(location) && location.simulated)
 			location.add_blood(src)
@@ -234,7 +234,7 @@ meteor_act
 /mob/living/human/proc/projectile_hit_bloody(obj/item/projectile/P, var/effective_force, var/hit_zone, var/obj/item/organ/external/organ)
 	if(P.atom_damage_type != BRUTE || P.nodamage)
 		return
-	if(!(P.sharp || prob(effective_force*4)))
+	if(!(P.is_sharp() || prob(effective_force*4)))
 		return
 	if(prob(effective_force))
 		var/turf/location = loc

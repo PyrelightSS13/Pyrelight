@@ -3,8 +3,8 @@
 	desc               = "A heavy tool with a pick head for prospecting for minerals, and an axe head for dealing with anyone with a prior claim."
 	icon_state         = "preview"
 	icon               = 'icons/obj/items/tool/pickaxe.dmi'
-	sharp              = TRUE
-	edge               = TRUE
+	_sharp             = TRUE
+	_edge              = TRUE
 	w_class            = ITEM_SIZE_HUGE
 	handle_material    = /decl/material/solid/organic/wood/oak
 	_base_attack_force = 15

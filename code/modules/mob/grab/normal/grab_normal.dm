@@ -228,7 +228,7 @@
 	if(!user.check_intent(I_FLAG_HARM))
 		return 0 // Not trying to hurt them.
 
-	if(!W.edge || !W.get_attack_force(user) || W.atom_damage_type != BRUTE)
+	if(!W.has_edge() || !W.get_attack_force(user) || W.atom_damage_type != BRUTE)
 		return 0 //unsuitable weapon
 	user.visible_message("<span class='danger'>\The [user] begins to slit [affecting]'s throat with \the [W]!</span>")
 
@@ -273,7 +273,7 @@
 		return
 	if(!user.check_intent(I_FLAG_HARM))
 		return 0 // Not trying to hurt them.
-	if(!W.edge || !W.get_attack_force(user) || W.atom_damage_type != BRUTE)
+	if(!W.has_edge() || !W.get_attack_force(user) || W.atom_damage_type != BRUTE)
 		return 0 //unsuitable weapon
 	var/obj/item/organ/external/O = grab.get_targeted_organ()
 	if(!O || !(O.limb_flags & ORGAN_FLAG_HAS_TENDON) || (O.status & ORGAN_TENDON_CUT))

@@ -51,7 +51,7 @@
 
 	var/atom/blade
 	for(var/obj/item/held in shuffle(user.get_held_items()))
-		if(has_edge(held))
+		if(held.has_edge())
 			blade = held
 			break
 	if(!blade)

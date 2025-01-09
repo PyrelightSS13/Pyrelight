@@ -38,7 +38,7 @@
 	name = "claws"
 	gender = PLURAL
 	attack_verb = list("clawed")
-	sharp = TRUE
+	_sharp = TRUE
 	_base_attack_force = 7
 
 /mob/living/simple_animal/crow/Initialize()

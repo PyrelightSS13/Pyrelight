@@ -2,8 +2,6 @@
 	name                = "hammer"
 	desc                = "A simple hammer. Ancient technology once thought lost."
 	icon                = 'icons/obj/items/tool/hammers/hammer.dmi'
-	sharp               = 0
-	edge                = 0
 	attack_verb         = list(
 		"bludgeons",
 		"slaps",

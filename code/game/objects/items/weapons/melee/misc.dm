@@ -32,7 +32,7 @@
 	item_state = "whip"
 	obj_flags = null
 	_base_attack_force = 19
-	edge = TRUE
+	_edge = TRUE
 	origin_tech = @'{"combat":6,"materials":5}'
 	material = /decl/material/solid/organic/leather/lizard
 

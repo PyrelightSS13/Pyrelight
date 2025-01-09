@@ -218,7 +218,7 @@
 
 	if(affecting && istype(supplied_wound) && supplied_wound.is_open() && dtype == BRUTE) // Can't embed in a small bruise.
 		var/obj/item/I = O
-		var/sharp = is_sharp(I)
+		var/sharp = I.is_sharp() || I.has_edge()
 		embed_damage *= (1 - get_blocked_ratio(def_zone, BRUTE, O.damage_flags(), O.armor_penetration, I.get_attack_force(user)))
 
 		//blunt objects should really not be embedding in things unless a huge amount of force is involved

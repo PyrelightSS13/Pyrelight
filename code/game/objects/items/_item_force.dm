@@ -45,18 +45,6 @@
 	_cached_attack_force = null
 	_base_attack_force = new_force
 
-/obj/item/proc/set_edge(new_edge)
-	if(edge != new_edge)
-		edge = new_edge
-		return TRUE
-	return FALSE
-
-/obj/item/proc/set_sharp(new_sharp)
-	if(sharp != new_sharp)
-		sharp = new_sharp
-		return TRUE
-	return FALSE
-
 /obj/item/proc/update_attack_force()
 
 	// Get our base force.
@@ -68,14 +56,14 @@
 	// Check if this material is hard enough to hold an edge.
 	if(!material.can_hold_edge())
 		set_edge(FALSE)
-	else if(!edge)
-		set_edge(initial(edge))
+	else if(!_edge)
+		set_edge(initial(_edge))
 
 	// Check if this material can hold a point.
 	if(!material.can_hold_sharpness())
 		set_sharp(FALSE)
-	else if(!sharp)
-		set_sharp(initial(sharp))
+	else if(!_sharp)
+		set_sharp(initial(_sharp))
 
 	// Work out where we're going to cap our calculated force.
 	// Any additional force resulting from hardness or weight turn into armour penetration.
@@ -119,7 +107,7 @@
 	var/list/item_effects = weapon.get_item_effects(IE_CAT_DAMAGE)
 	if(length(item_effects))
 		for(var/decl/item_effect/damage_effect as anything in item_effects)
-			. = damage_effect.modify_attack_damage(., weapon, src, parameters = item_effects[damage_effect])
+			. = damage_effect.modify_attack_damage(., weapon, src, dry_run, item_effects[damage_effect])
 	return round(.)
 
 // Debug proc - leaving in for future work. Linter hates protected var access so leave commented.
@@ -164,7 +152,7 @@
 			(attk_force + expected_material_mod),
 			(attk_force * item._wielded_force_multiplier),
 			item.armor_penetration,
-			(item.sharp||item.edge)
+			(item._sharp|item._edge)
 		), "|")
 
 	text2file(jointext(rows, "\n"), "weapon_stats_dump.csv")

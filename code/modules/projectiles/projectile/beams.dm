@@ -7,7 +7,7 @@
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GLASS | PASS_FLAG_GRILLE
 	damage = 40
 	atom_damage_type = BURN
-	sharp = 1 //concentrated burns
+	_sharp = TRUE //concentrated burns
 	damage_flags = DAM_LASER
 	eyeblur = 4
 	hitscan = 1
@@ -210,7 +210,7 @@
 	icon_state = "stun"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	damage_flags = 0
-	sharp = 0 //not a laser
+	_sharp = FALSE //not a laser
 	damage = 1//flavor burn! still not a laser, dmg will be reduce by energy resistance not laser resistances
 	atom_damage_type = BURN
 	eyeblur = 1//Some feedback that you've been hit
@@ -241,8 +241,8 @@
 	icon_state = "omnilaser"
 	fire_sound = 'sound/weapons/plasma_cutter.ogg'
 	damage = 15
-	sharp = 1
-	edge = 1
+	_sharp = TRUE
+	_edge = TRUE
 	atom_damage_type = BURN
 	life_span = 5
 	pass_flags = PASS_FLAG_TABLE
@@ -264,7 +264,7 @@
 	fire_sound='sound/weapons/confuseray.ogg'
 	damage = 2
 	agony = 7
-	sharp = FALSE
+	_sharp = FALSE
 	distance_falloff = 5
 	damage_flags = 0
 	atom_damage_type = STUN
@@ -317,7 +317,7 @@
 	name = "dark matter wave"
 	icon_state = "darkt"
 	damage_flags = 0
-	sharp = 0 //not a laser
+	_sharp = FALSE //not a laser
 	agony = 40
 	atom_damage_type = STUN
 	muzzle_type = /obj/effect/projectile/muzzle/darkmattertaser
@@ -329,7 +329,7 @@
 	icon_state = "laser"
 	damage = 15
 	atom_damage_type = ELECTROCUTE //You should be safe inside a voidsuit
-	sharp = FALSE //"Wide" spectrum beam
+	_sharp = FALSE //"Wide" spectrum beam
 	muzzle_type = /obj/effect/projectile/muzzle/pd
 	tracer_type = /obj/effect/projectile/tracer/pd
 	impact_type = /obj/effect/projectile/impact/pd
@@ -341,7 +341,7 @@
 	damage = 12
 	agony = 8
 	eyeblur = 8
-	sharp = FALSE
+	_sharp = FALSE
 	damage_flags = 0
 	life_span = 8
 	penetration_modifier = 0.1

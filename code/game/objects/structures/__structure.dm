@@ -245,7 +245,7 @@
 			playsound(loc, 'sound/weapons/tablehit1.ogg', 50, 1)
 		var/list/L = take_damage(rand(1,5))
 		for(var/obj/item/shard/S in L)
-			if(S.sharp && prob(50))
+			if(S.is_sharp() && prob(50))
 				victim.visible_message(
 					SPAN_DANGER("\The [S] slices into [victim]'s face!"),
 					SPAN_DANGER("\The [S] slices into your face!")

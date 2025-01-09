@@ -42,5 +42,11 @@
 			// TODO: play sharpening sound? Spawn sparks for metal?
 			user.visible_message("\The [user] sharpens \the [src] with \the [sharpening_with].")
 	else
-		to_chat(user, SPAN_WARNING("\The [src] cannot be [sharp ? "further sharpened" : "sharpened"] with \the [sharpening_with]."))
+		to_chat(user, SPAN_WARNING("\The [src] cannot be [initial(_sharp) ? "further sharpened" : "sharpened"] with \the [sharpening_with]."))
 	return TRUE
+
+// We don't override sharp because it's probably still pointy even if it isn't sharpened.
+/obj/item/has_edge()
+	. = ..()
+	if(. && has_item_effect(/decl/item_effect/sharpened, IE_CAT_DAMAGE))
+		return get_item_effect_parameter(/decl/item_effect/sharpened, IE_CAT_DAMAGE, IE_PAR_USES) > 0

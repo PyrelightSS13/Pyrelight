@@ -6,8 +6,8 @@
 	origin_tech                       = @'{"materials":1,"combat":1}'
 	attack_verb                       = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	obj_flags                         = OBJ_FLAG_CONDUCTIBLE
-	sharp                             = TRUE
-	edge                              = TRUE
+	_sharp                            = TRUE
+	_edge                             = TRUE
 	item_flags                        = ITEM_FLAG_IS_WEAPON
 	pickup_sound                      = 'sound/foley/knife1.ogg'
 	drop_sound                        = 'sound/foley/knifedrop3.ogg'

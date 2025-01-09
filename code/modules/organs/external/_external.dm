@@ -318,7 +318,7 @@
 //Handles removing internal organs/implants/items still in the detached limb.
 /obj/item/organ/external/proc/try_remove_internal_item(var/obj/item/used_item, var/mob/user)
 
-	if(stage == 0 && used_item.sharp)
+	if(stage == 0 && used_item.is_sharp())
 		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> cuts \the [src] open with \the [used_item]."))
 		stage++
 		return TRUE
@@ -328,7 +328,7 @@
 		stage++
 		return TRUE
 
-	if(stage == 2 && (used_item.sharp || IS_HEMOSTAT(used_item) || IS_WIRECUTTER(used_item)))
+	if(stage == 2 && (used_item.is_sharp() || IS_HEMOSTAT(used_item) || IS_WIRECUTTER(used_item)))
 		var/list/radial_buttons = make_item_radial_menu_choices(get_contents_recursive())
 		if(LAZYLEN(radial_buttons))
 			var/obj/item/removing = show_radial_menu(user, src, radial_buttons, radius = 42, require_near = TRUE, use_labels = RADIAL_LABELS_OFFSET, check_locs = list(src))

@@ -11,8 +11,8 @@
 	name  = "steak knife"
 	desc  = "It's a steak knife with a serrated edge."
 	icon  = 'icons/obj/food/utensils/steak_knife.dmi'
-	sharp = TRUE
-	edge  = TRUE
+	_sharp = TRUE
+	_edge  = TRUE
 	utensil_flags = UTENSIL_FLAG_SLICE
 	material = /decl/material/solid/metal/steel
 	_base_attack_force = 6
