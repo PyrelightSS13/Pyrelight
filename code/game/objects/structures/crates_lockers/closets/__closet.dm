@@ -250,7 +250,7 @@ var/global/list/closets = list()
 
 /obj/structure/closet/attackby(obj/item/used_item, mob/user)
 
-	if(user.check_intent(I_FLAG_HARM) && used_item.get_attack_force(user))
+	if(user.check_intent(I_FLAG_HARM) && used_item.get_attack_force(user, dry_run = TRUE))
 		return ..()
 
 	if(!opened && (istype(used_item, /obj/item/stack/material) || IS_WRENCH(used_item)) )

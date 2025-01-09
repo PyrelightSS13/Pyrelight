@@ -163,7 +163,7 @@
 /obj/structure/door/attackby(obj/item/used_item, mob/user)
 	add_fingerprint(user, 0, used_item)
 
-	if((user.check_intent(I_FLAG_HARM) && used_item.get_attack_force(user)) || istype(used_item, /obj/item/stack/material))
+	if((user.check_intent(I_FLAG_HARM) && used_item.get_attack_force(user, dry_run = TRUE)) || istype(used_item, /obj/item/stack/material))
 		return ..()
 
 	if(used_item.user_can_attack_with(user, silent = TRUE))

@@ -14,6 +14,6 @@
 	if(distance <= 1)
 		var/uses = item.get_item_effect_parameter(src, IE_CAT_DAMAGE, IE_PAR_USES)
 		if(uses > 0)
-			to_chat(user, SPAN_NOTICE("\The [item] has been sharpened to a keen edge."))
+			to_chat(user, SPAN_NOTICE("\The [item] has been honed to a keen edge."))
 		else
-			to_chat(user, SPAN_NOTICE("\The [item] is dull and in need of sharpening."))
+			to_chat(user, SPAN_NOTICE("\The [item] in need of sharpening."))

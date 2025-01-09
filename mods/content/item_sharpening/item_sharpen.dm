@@ -37,9 +37,9 @@
 		return FALSE
 	if(can_sharpen_with(sharpening_with))
 		user.visible_message("\The [user] begins sharpening \the [src] with \the [sharpening_with].")
-		// TODO: play sharpening sound? Spawn sparks for metal?
+		playsound(loc, 'sound/foley/knife1.ogg', 50) // metallic scrape, TODO better sound
 		if(user.do_skilled(10 SECONDS, SKILL_WEAPONS, src, check_holding = TRUE) && !QDELETED(sharpening_with) && can_sharpen_with(sharpening_with) && sharpen_with(user, sharpening_with))
-			// TODO: play sharpening sound? Spawn sparks for metal?
+			playsound(loc, 'sound/foley/knife1.ogg', 50)
 			user.visible_message("\The [user] sharpens \the [src] with \the [sharpening_with].")
 	else
 		to_chat(user, SPAN_WARNING("\The [src] cannot be [initial(_sharp) ? "further sharpened" : "sharpened"] with \the [sharpening_with]."))
