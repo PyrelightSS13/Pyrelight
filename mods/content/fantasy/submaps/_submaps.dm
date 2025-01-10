@@ -17,6 +17,10 @@
 /datum/map_template/fantasy/get_template_cost()
 	return cost
 
+/datum/map/New()
+	LAZYSET(apc_test_exempt_areas, /area/fantasy, NO_SCRUBBER|NO_VENT|NO_APC)
+	..()
+
 /area/fantasy
 	abstract_type = /area/fantasy
 	allow_xenoarchaeology_finds = FALSE

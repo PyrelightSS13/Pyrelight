@@ -475,11 +475,33 @@
 	for(var/gen_type in map_gen)
 		new gen_type(origx, origy, level_z, endx, endy, FALSE, TRUE, get_base_area_instance())
 
+/// Helper proc for placing mobs on a level after level creation.
+/datum/level_data/proc/get_mobs_to_populate_level()
+	return
+
 ///Called during level setup. Run anything that should happen only after the map is fully generated.
 /datum/level_data/proc/after_generate_level()
+
 	build_border()
+
 	if(daycycle_id && daycycle_type)
 		SSdaycycle.register_level(level_z, daycycle_id, daycycle_type)
+
+	var/list/mobs_to_spawn = get_mobs_to_populate_level()
+	if(length(mobs_to_spawn))
+		for(var/list/mob_category in mobs_to_spawn)
+			var/list/mob_types = mob_category[1]
+			var/mob_turf  = mob_category[2]
+			var/mob_count = mob_category[3]
+			var/sanity = 1000
+			while(mob_count && sanity)
+				sanity--
+				var/turf/place_mob_at = locate(rand(level_inner_min_x, level_inner_max_x), rand(level_inner_min_y, level_inner_max_y), level_z)
+				if(istype(place_mob_at, mob_turf) && !(locate(/mob/living) in place_mob_at))
+					var/mob_type = pickweight(mob_types)
+					new mob_type(place_mob_at)
+					mob_count--
+					CHECK_TICK
 
 ///Changes anything named we may need to rename accordingly to the parent location name. For instance, exoplanets levels.
 /datum/level_data/proc/adapt_location_name(var/location_name)

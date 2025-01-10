@@ -16,7 +16,6 @@
 	daycycle_type = /datum/daycycle/shaded_hills
 	daycycle_id = "daycycle_shaded_hills"
 	template_edge_padding = 0 // we use a strictly delineated subarea, no need for this guard
-	var/list/mobs_to_spawn = list()
 
 /datum/daycycle/shaded_hills
 	cycle_duration = 2 HOURS // 1 hour of daylight, 1 hour of night
@@ -25,23 +24,6 @@
 /datum/daycycle/shaded_hills/New()
 	time_in_cycle = rand(cycle_duration)
 	..()
-
-/datum/level_data/main_level/shaded_hills/after_generate_level()
-	. = ..()
-	if(length(mobs_to_spawn))
-		for(var/list/mob_category in mobs_to_spawn)
-			var/list/mob_types = mob_category[1]
-			var/mob_turf  = mob_category[2]
-			var/mob_count = mob_category[3]
-			var/sanity = 1000
-			while(mob_count && sanity)
-				sanity--
-				var/turf/place_mob_at = locate(rand(level_inner_min_x, level_inner_max_x), rand(level_inner_min_y, level_inner_max_y), level_z)
-				if(istype(place_mob_at, mob_turf) && !(locate(/mob/living) in place_mob_at))
-					var/mob_type = pickweight(mob_types)
-					new mob_type(place_mob_at)
-					mob_count--
-					CHECK_TICK
 
 /datum/level_data/main_level/shaded_hills/grassland
 	name = "Shaded Hills - Grassland"
@@ -60,7 +42,8 @@
 	subtemplate_category = MAP_TEMPLATE_CATEGORY_FANTASY_GRASSLAND
 	subtemplate_area = /area/shaded_hills/outside/poi
 
-	mobs_to_spawn = list(
+/datum/level_data/main_level/shaded_hills/grassland/get_mobs_to_populate_level()
+	var/static/list/mobs_to_spawn = list(
 		list(
 			list(
 				/mob/living/simple_animal/passive/mouse        = 9,
@@ -73,7 +56,7 @@
 			10
 		)
 	)
-
+	return mobs_to_spawn
 
 /datum/level_data/main_level/shaded_hills/swamp
 	name = "Shaded Hills - Swamp"
@@ -89,7 +72,8 @@
 	subtemplate_category = MAP_TEMPLATE_CATEGORY_FANTASY_SWAMP
 	subtemplate_area = /area/shaded_hills/outside/swamp/poi
 
-	mobs_to_spawn = list(
+/datum/level_data/main_level/shaded_hills/swamp/get_mobs_to_populate_level()
+	var/static/list/mobs_to_spawn = list(
 		list(
 			list(
 				/mob/living/simple_animal/passive/mouse        = 6,
@@ -115,6 +99,7 @@
 			10
 		)
 	)
+	return mobs_to_spawn
 
 /datum/level_data/main_level/shaded_hills/woods
 	name = "Shaded Hills - Woods"
@@ -130,7 +115,8 @@
 	subtemplate_category = MAP_TEMPLATE_CATEGORY_FANTASY_WOODS
 	subtemplate_area = /area/shaded_hills/outside/woods/poi
 
-	mobs_to_spawn = list(
+/datum/level_data/main_level/shaded_hills/woods/get_mobs_to_populate_level()
+	var/static/list/mobs_to_spawn = list(
 		list(
 			list(
 				/mob/living/simple_animal/passive/mouse        = 6,
@@ -150,6 +136,7 @@
 			5
 		)
 	)
+	return mobs_to_spawn
 
 /datum/level_data/main_level/shaded_hills/downlands
 	name = "Shaded Hills - Downlands"
