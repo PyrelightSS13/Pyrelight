@@ -23,7 +23,7 @@
 			put_in_active_hand(new /obj/item/bladed/broadsword(src))
 		else
 			put_in_active_hand(new /obj/item/bladed/shortsword(src))
-			put_in_inactive_hand(new /obj/item/shield/buckler(src))
+			put_in_inactive_hand(new /obj/item/shield/crafted/buckler(src))
 		return
 
 	if(species_name == SPECIES_KOBALOI)

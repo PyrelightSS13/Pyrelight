@@ -21,7 +21,7 @@
 /decl/outfit/job/karzerfeste/adventurer
 	name       = "Karzerfeste - Adventurer"
 	belt       = /obj/item/bladed/longsword
-	suit_store = /obj/item/shield/buckler
+	suit_store = /obj/item/shield/crafted/buckler
 	suit       = /obj/item/clothing/suit/armor/forged/brigandine
 	uniform    = list(
 		/obj/item/clothing/pants/trousers,

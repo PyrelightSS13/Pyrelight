@@ -1,7 +1,7 @@
 /datum/map/karzerfeste
-	id_hud_icons        = 'maps/karzerfeste/jobs/icons.dmi'
-	default_job_type    = /datum/job/karzerfeste/local/traveller
-	allowed_jobs        = list(
+	hud_icons        = 'maps/karzerfeste/jobs/icons.dmi'
+	default_job_type = /datum/job/karzerfeste/local/traveller
+	allowed_jobs     = list(
 		/datum/job/karzerfeste/guild/master,
 		/datum/job/karzerfeste/guild/clerk,
 		/datum/job/karzerfeste/guild/adventurer,

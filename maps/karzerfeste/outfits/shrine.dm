@@ -20,7 +20,7 @@
 	name       = "Karzerfeste - Shrine Cleric"
 	suit       = /obj/item/clothing/suit/armor/forged/cuirass
 	belt       = /obj/item/bladed/longsword // TODO: mace and magic
-	suit_store = /obj/item/shield/buckler
+	suit_store = /obj/item/shield/crafted/buckler
 
 /decl/outfit/job/karzerfeste/shrine/gravekeeper
 	name       = "Karzerfeste - Shrine Gravekeeper"
