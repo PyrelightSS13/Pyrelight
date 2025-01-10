@@ -62,3 +62,9 @@ var/global/list/_tool_properties_cache = list()
 	desc                 = "The head of a sledgehammer."
 	icon_state           = "sledgehammer"
 	w_class              = ITEM_SIZE_NORMAL
+
+/obj/item/tool_component/head/forging_hammer
+	name                 = "forging hammer head"
+	desc                 = "The head of a forging hammer."
+	icon_state           = "forging"
+	w_class              = ITEM_SIZE_NORMAL
