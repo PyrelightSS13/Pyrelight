@@ -1,6 +1,3 @@
-var/global/universe_has_ended = 0
-
-
 /datum/universal_state/supermatter_cascade
  	name = "Supermatter Cascade"
  	desc = "Unknown harmonance affecting universal substructure, converting nearby matter to supermatter."

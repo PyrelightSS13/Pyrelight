@@ -1,4 +1,3 @@
-#ifdef CONTENT_PACK_BORERS
 /mob/living/simple_animal/borer
 	var/image/aura_image
 
@@ -53,4 +52,3 @@
 			set_ability_cooldown(15 SECONDS)
 
 		return TRUE
-#endif

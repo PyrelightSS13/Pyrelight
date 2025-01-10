@@ -1,39 +1,36 @@
 #if !defined(USING_MAP_DATUM)
 
-	#include "../../mods/gamemodes/cult/_cult.dme"
-	#include "../../mods/gamemodes/heist/_heist.dme"
-	#include "../../mods/gamemodes/meteor/_meteor.dme"
-	#include "../../mods/gamemodes/ninja/_ninja.dme"
-	#include "../../mods/gamemodes/revolution/_revolution.dme"
-	#include "../../mods/gamemodes/traitor/_traitor.dme"
-	#include "../../mods/gamemodes/spyvspy/_spyvspy.dme"
-	#include "../../mods/gamemodes/mixed/_mixed.dme"
-
 	#include "../../mods/content/mundane.dm"
+	#include "../../mods/content/scaling_descriptors.dm"
+
 	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/corporate/_corporate.dme"
 	#include "../../mods/content/government/_government.dme"
 	#include "../../mods/content/matchmaking/_matchmaking.dme"
 	#include "../../mods/content/modern_earth/_modern_earth.dme"
 	#include "../../mods/content/mouse_highlights/_mouse_highlight.dme"
-	#include "../../mods/content/scaling_descriptors.dm"
+	#include "../../mods/content/pheromones/_pheromones.dme"
+	#include "../../mods/content/psionics/_psionics.dme"
+	#include "../../mods/content/standard_jobs/_standard_jobs.dme"
 	#include "../../mods/content/xenobiology/_xenobiology.dme"
 	#include "../../mods/content/tabloids/_tabloids.dme"
 
-	#include "../../mods/mobs/dionaea/_dionaea.dme"
+	#include "../../mods/gamemodes/cult/_cult.dme"
+	#include "../../mods/gamemodes/heist/_heist.dme"
+	#include "../../mods/gamemodes/meteor/_meteor.dme"
+	#include "../../mods/gamemodes/ninja/_ninja.dme"
+	#include "../../mods/gamemodes/revolution/_revolution.dme"
+	#include "../../mods/gamemodes/spyvspy/_spyvspy.dme"
+	#include "../../mods/gamemodes/traitor/_traitor.dme"
+	#include "../../mods/gamemodes/mixed.dm"
+
 	#include "../../mods/mobs/borers/_borers.dme"
-
-	// Must come after borers for compatibility.
-	#include "../../mods/content/psionics/_psionics.dme"
-
-	// Must come after psionics for counsellor compatibility.
-	#include "../../mods/content/standard_jobs/_standard_jobs.dme"
+	#include "../../mods/mobs/dionaea/_dionaea.dme"
 
 	#include "../../mods/species/ascent/_ascent.dme"
-	#include "../../mods/content/pheromones/_pheromones.dme"
+	#include "../../mods/species/bayliens/_bayliens.dme"
 	#include "../../mods/species/serpentid/_serpentid.dme"
 	#include "../../mods/species/utility_frames/_utility_frames.dme"
-	#include "../../mods/species/bayliens/_bayliens.dme"
 
 	#include "../random_ruins/exoplanet_ruins/playablecolony/playablecolony.dm"
 

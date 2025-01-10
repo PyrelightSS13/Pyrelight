@@ -40,6 +40,11 @@ var/global/list/_tool_properties_cache = list()
 	desc                 = "The head of a hoe."
 	icon_state           = "hoe"
 
+/obj/item/tool_component/head/chisel
+	name                 = "chisel head"
+	desc                 = "The head of a chisel."
+	icon_state           = "hoe"
+
 /obj/item/tool_component/head/handaxe
 	name                 = "hand axe head"
 	desc                 = "The head of a hand axe."
@@ -57,4 +62,3 @@ var/global/list/_tool_properties_cache = list()
 	desc                 = "The head of a sledgehammer."
 	icon_state           = "sledgehammer"
 	w_class              = ITEM_SIZE_NORMAL
-

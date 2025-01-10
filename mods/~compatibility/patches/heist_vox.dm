@@ -1,4 +1,3 @@
-#ifdef GAMEMODE_PACK_HEIST
 /decl/special_role/raider/Initialize()
 	. = ..()
 	LAZYSET(outfits_per_species, SPECIES_VOX, /decl/outfit/vox_raider)
@@ -41,4 +40,3 @@
 	vox.SetName(vox.real_name)
 	var/decl/special_role/raider/raiders = GET_DECL(/decl/special_role/raider)
 	raiders.update_access(vox)
-#endif
