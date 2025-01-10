@@ -82,6 +82,7 @@ var/global/list/areas = list()
 	var/tmp/is_outside = OUTSIDE_NO
 
 	var/tmp/saved_map_hash // Used for cleanup when loaded via map templates.
+	var/list/additional_fishing_results
 
 /area/New()
 	icon_state = ""
@@ -93,6 +94,10 @@ var/global/list/areas = list()
 	..()
 
 /area/Initialize()
+	if(additional_fishing_results)
+		LAZYINITLIST(fishing_results)
+		for(var/fish in additional_fishing_results)
+			fishing_results[fish] = additional_fishing_results[fish]
 	. = ..()
 	global.areas += src
 	if(!requires_power || !apc)
