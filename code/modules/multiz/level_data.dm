@@ -173,6 +173,14 @@
 	// Whether or not this level permits things like graffiti and filth to persist across rounds.
 	var/permit_persistence = FALSE
 
+	// Submap loading values, passed back via getters like get_subtemplate_budget().
+	/// A point budget to spend on subtemplates (see template costs)
+	var/subtemplate_budget = 0
+	/// A string identifier for the category of subtemplates to draw from for this level.
+	var/subtemplate_category = null
+	/// A specific area to use when determining where to place subtemplates.
+	var/subtemplate_area = null
+
 /datum/level_data/New(var/_z_level, var/defer_level_setup = FALSE)
 	. = ..()
 	level_z = _z_level
@@ -418,16 +426,22 @@
 //
 /// Helper proc for subtemplate generation. Returns a point budget to spend on subtemplates.
 /datum/level_data/proc/get_subtemplate_budget()
-	return 0
+	return subtemplate_budget
 /// Helper proc for subtemplate generation. Returns a string identifier for a general category of template.
 /datum/level_data/proc/get_subtemplate_category()
-	return
+	return subtemplate_category
 /// Helper proc for subtemplate generation. Returns a bitflag of template flags that must not be present for a subtemplate to be considered available.
 /datum/level_data/proc/get_subtemplate_blacklist()
 	return
 /// Helper proc for subtemplate generation. Returns a bitflag of template flags that must be present for a subtemplate to be considered available.
 /datum/level_data/proc/get_subtemplate_whitelist()
 	return
+/// Helper proc for getting areas associated with placable submaps on this level.
+/datum/level_data/proc/get_subtemplate_areas(template_category, blacklist, whitelist)
+	if(subtemplate_area)
+		return islist(subtemplate_area) ? subtemplate_area : list(subtemplate_area)
+	if(base_area)
+		return list(base_area)
 
 ///Called when setting up the level. Apply generators and anything that modifies the turfs of the level.
 /datum/level_data/proc/generate_level()
@@ -741,9 +755,6 @@ INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
 		/datum/random_map/automata/cave_system,
 		/datum/random_map/noise/ore
 	)
-
-/datum/level_data/proc/get_subtemplate_areas(template_category, blacklist, whitelist)
-	return list(base_area)
 
 ///Try to allocate the given amount of POIs onto our level. Returns the template types that were spawned
 /datum/level_data/proc/spawn_subtemplates(budget = 0, template_category, blacklist, whitelist)
