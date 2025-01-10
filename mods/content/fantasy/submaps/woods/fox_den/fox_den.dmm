@@ -9,7 +9,7 @@
 /mob/living/simple_animal/passive/fox,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/dirt,
-/area/shaded_hills/outside/point_of_interest/fox_den)
+/area/fantasy/outside/point_of_interest/fox_den)
 "x" = (
 /turf/floor/grass/wild,
 /area/template_noop)
@@ -23,7 +23,7 @@
 /obj/abstract/exterior_marker/inside,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/dirt,
-/area/shaded_hills/outside/point_of_interest/fox_den)
+/area/fantasy/outside/point_of_interest/fox_den)
 "B" = (
 /turf/floor/grass,
 /area/template_noop)
@@ -31,32 +31,32 @@
 /obj/abstract/exterior_marker/inside,
 /obj/abstract/exterior_marker/inside,
 /turf/wall/natural/dirt,
-/area/shaded_hills/outside/point_of_interest/fox_den)
+/area/fantasy/outside/point_of_interest/fox_den)
 "O" = (
 /obj/abstract/exterior_marker/inside,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/dirt,
-/area/shaded_hills/outside/point_of_interest/fox_den)
+/area/fantasy/outside/point_of_interest/fox_den)
 "P" = (
 /obj/item/food/butchery/offal/small,
 /obj/item/stack/material/bone/mapped/bone,
 /obj/abstract/exterior_marker/inside,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/dirt,
-/area/shaded_hills/outside/point_of_interest/fox_den)
+/area/fantasy/outside/point_of_interest/fox_den)
 "S" = (
 /obj/abstract/exterior_marker/inside,
 /turf/floor/dirt,
-/area/shaded_hills/outside/point_of_interest/fox_den)
+/area/fantasy/outside/point_of_interest/fox_den)
 "W" = (
 /obj/abstract/exterior_marker/inside,
 /turf/wall/natural/dirt,
-/area/shaded_hills/outside/point_of_interest/fox_den)
+/area/fantasy/outside/point_of_interest/fox_den)
 "Y" = (
 /obj/item/seeds/extracted/foxglove,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/dirt,
-/area/shaded_hills/outside/point_of_interest/fox_den)
+/area/fantasy/outside/point_of_interest/fox_den)
 
 (1,1,1) = {"
 n

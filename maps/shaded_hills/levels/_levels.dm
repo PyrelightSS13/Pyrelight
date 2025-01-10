@@ -69,7 +69,7 @@
 		"shaded_hills_downlands" = EAST
 	)
 	submap_budget = 5
-	submap_category = MAP_TEMPLATE_CATEGORY_SH_GRASSLAND
+	submap_category = MAP_TEMPLATE_CATEGORY_FANTASY_GRASSLAND
 	submap_area = /area/shaded_hills/outside/poi
 
 	mobs_to_spawn = list(
@@ -98,7 +98,7 @@
 		/datum/random_map/noise/forage/shaded_hills/swamp
 	)
 	submap_budget = 5
-	submap_category = MAP_TEMPLATE_CATEGORY_SH_SWAMP
+	submap_category = MAP_TEMPLATE_CATEGORY_FANTASY_SWAMP
 	submap_area = /area/shaded_hills/outside/swamp/poi
 
 	mobs_to_spawn = list(
@@ -139,7 +139,7 @@
 		/datum/random_map/noise/forage/shaded_hills/woods
 	)
 	submap_budget = 5
-	submap_category = MAP_TEMPLATE_CATEGORY_SH_WOODS
+	submap_category = MAP_TEMPLATE_CATEGORY_FANTASY_WOODS
 	submap_area = /area/shaded_hills/outside/woods/poi
 
 	mobs_to_spawn = list(
@@ -174,7 +174,7 @@
 		"shaded_hills_grassland" = WEST
 	)
 	submap_budget = 5
-	submap_category = MAP_TEMPLATE_CATEGORY_SH_DOWNLANDS
+	submap_category = MAP_TEMPLATE_CATEGORY_FANTASY_DOWNLANDS
 	submap_area = /area/shaded_hills/outside/downlands/poi
 
 /datum/level_data/main_level/shaded_hills/caverns
@@ -184,7 +184,7 @@
 		"shaded_hills_dungeon" = EAST
 	)
 	submap_budget = 5
-	submap_category = MAP_TEMPLATE_CATEGORY_SH_CAVERNS
+	submap_category = MAP_TEMPLATE_CATEGORY_FANTASY_CAVERNS
 	submap_area = /area/shaded_hills/caves/deep/poi
 	level_generators = list(
 		/datum/random_map/automata/cave_system/shaded_hills,
@@ -199,7 +199,7 @@
 		"shaded_hills_caverns" = WEST
 	)
 	submap_budget = 5
-	submap_category = MAP_TEMPLATE_CATEGORY_SH_DUNGEON
+	submap_category = MAP_TEMPLATE_CATEGORY_FANTASY_DUNGEON
 	submap_area = /area/shaded_hills/caves/dungeon/poi
 	base_turf = /turf/floor/rock/basalt
 
