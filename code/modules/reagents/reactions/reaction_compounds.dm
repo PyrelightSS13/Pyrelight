@@ -159,6 +159,16 @@
 	. = ..()
 	holder?.add_reagent(/decl/material/liquid/water, created_volume)
 
+/decl/chemical_reaction/compound/nanitefluid
+	name = "Nanite Fluid Synthesis"
+	result = /decl/material/liquid/nanitefluid
+	required_reagents = list(/decl/material/liquid/plasticide = 1, /decl/material/solid/metal/aluminium = 1, /decl/material/liquid/lube = 1)
+	catalysts = list(/decl/material/liquid/crystal_agent = 1)
+	result_amount = 3
+	minimum_temperature = (-25 CELSIUS) - 100
+	maximum_temperature = -25 CELSIUS
+	mix_message = "The solution becomes a metallic slime."
+
 // This is a bit silly, but we need a way to unify oil types until someone rewrites lanterns.
 /decl/chemical_reaction/compound/fuel_oil
 	name = "Plant Fuel Oil"
