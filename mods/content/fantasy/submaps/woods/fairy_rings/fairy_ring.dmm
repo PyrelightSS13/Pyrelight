@@ -1,14 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /turf/floor/fake_grass,
-/area/shaded_hills/outside/point_of_interest/fairy_ring)
+/area/fantasy/outside/point_of_interest/fairy_ring)
 "w" = (
 /obj/structure/flora/plant/random_mushroom,
 /turf/floor/fake_grass,
-/area/shaded_hills/outside/point_of_interest/fairy_ring)
+/area/fantasy/outside/point_of_interest/fairy_ring)
 "D" = (
 /turf/floor/grass/wild,
-/area/shaded_hills/outside/point_of_interest/fairy_ring)
+/area/fantasy/outside/point_of_interest/fairy_ring)
 "N" = (
 /turf/template_noop,
 /area/template_noop)

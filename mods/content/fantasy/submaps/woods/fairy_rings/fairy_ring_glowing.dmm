@@ -4,14 +4,14 @@
 /area/template_noop)
 "h" = (
 /turf/floor/grass,
-/area/shaded_hills/outside/point_of_interest/fairy_ring)
+/area/fantasy/outside/point_of_interest/fairy_ring)
 "j" = (
 /turf/floor/barren,
-/area/shaded_hills/outside/point_of_interest/fairy_ring)
+/area/fantasy/outside/point_of_interest/fairy_ring)
 "A" = (
 /obj/structure/flora/plant/random_mushroom/glowing,
 /turf/floor/grass,
-/area/shaded_hills/outside/point_of_interest/fairy_ring)
+/area/fantasy/outside/point_of_interest/fairy_ring)
 
 (1,1,1) = {"
 a

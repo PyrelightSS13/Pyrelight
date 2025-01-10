@@ -3,33 +3,33 @@
 /obj/structure/door/walnut,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "g" = (
 /obj/abstract/exterior_marker/inside,
 /obj/structure/table/end,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "h" = (
 /turf/template_noop,
 /area/template_noop)
 "i" = (
 /turf/floor/dirt,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "k" = (
 /obj/structure/closet/crate/chest/ebony,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "o" = (
 /obj/structure/drying_rack/ebony,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "u" = (
 /obj/structure/reagent_dispensers/barrel/ebony/beer,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "x" = (
 /obj/structure/table/wood/ebony,
 /obj/item/flame/torch,
@@ -38,7 +38,7 @@
 /obj/item/rock/hematite,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "z" = (
 /obj/effect/spider/spiderling/mundane,
 /obj/structure/table/wood/ebony,
@@ -48,23 +48,23 @@
 	},
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "B" = (
 /obj/effect/decal/cleanable/blood,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "D" = (
 /obj/effect/spider/spiderling/mundane,
 /obj/structure/table/wood/ebony,
 /obj/item/food/grown/carrot,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "G" = (
 /obj/abstract/exterior_marker/inside,
 /turf/wall/log/walnut/shutter,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "H" = (
 /obj/structure/table/wood/ebony,
 /obj/item/bladed/knife,
@@ -73,37 +73,37 @@
 /obj/item/food/grown/carrot,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "I" = (
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "L" = (
 /obj/effect/spider/spiderling/mundane,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "M" = (
 /obj/abstract/exterior_marker/inside,
 /turf/wall/log/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "N" = (
 /obj/abstract/exterior_marker/inside,
 /obj/structure/coatrack/ebony,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "T" = (
 /obj/abstract/exterior_marker/inside,
 /obj/structure/table/desk/dresser,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "W" = (
 /obj/structure/wall_sconce/torch{
 	dir = 1;
 	pixel_y = 24
 	},
 /turf/floor/dirt,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 "Z" = (
 /obj/item/remains/human,
 /obj/structure/bed/simple/ebony/cloth,
@@ -112,7 +112,7 @@
 /obj/random/jewelry,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/wood/rough/walnut,
-/area/shaded_hills/outside/point_of_interest/old_cabin)
+/area/fantasy/outside/point_of_interest/old_cabin)
 
 (1,1,1) = {"
 i
