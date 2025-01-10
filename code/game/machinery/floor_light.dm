@@ -58,7 +58,7 @@ var/global/list/floor_light_cache = list()
 		qdel(src)
 		return TRUE
 
-	if(W.get_attack_force(user) && user.check_intent(I_FLAG_HARM))
+	if(W.get_attack_force(user, dry_run = TRUE) && user.check_intent(I_FLAG_HARM))
 		return physical_attack_hand(user)
 
 	return ..()

@@ -425,7 +425,7 @@
 	var/obj/item/organ/internal/stomach/stomach = get_organ(BP_STOMACH, /obj/item/organ/internal/stomach)
 	if(stomach && stomach.contents.len)
 		for(var/obj/item/O in stomach.contents)
-			if((O.edge || O.sharp) && prob(5))
+			if((O.is_sharp() || O.has_edge()) && prob(5))
 				var/obj/item/organ/external/parent = GET_EXTERNAL_ORGAN(src, stomach.parent_organ)
 				if(prob(1) && can_feel_pain() && O.can_embed())
 					to_chat(src, SPAN_DANGER("You feel something rip out of your [stomach.name]!"))

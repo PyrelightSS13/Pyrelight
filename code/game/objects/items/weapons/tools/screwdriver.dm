@@ -9,7 +9,7 @@
 	center_of_mass = @'{"x":16,"y":7}'
 	attack_verb = list("stabbed")
 	lock_picking_level = 5
-	sharp = TRUE
+	_sharp = TRUE
 	material_alteration = MAT_FLAG_ALTERATION_COLOR
 	drop_sound = 'sound/foley/singletooldrop2.ogg'
 

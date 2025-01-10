@@ -3,7 +3,7 @@
 	desc                      = "A small folding knife."
 	icon                      = 'icons/obj/items/bladed/folding.dmi'
 	w_class                   = ITEM_SIZE_SMALL
-	sharp                     = FALSE
+	_sharp                    = FALSE
 	pommel_material           = null
 	guard_material            = null
 	slot_flags                = null
@@ -53,9 +53,8 @@
 
 /obj/item/bladed/folding/update_attack_force()
 	..()
-	// TODO: check sharp/edge.
-	edge  = open
-	sharp = open
+	set_edge(open)
+	set_sharp(open)
 	if(open)
 		w_class     = open_item_size
 		attack_verb = open_attack_verbs

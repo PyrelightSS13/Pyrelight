@@ -22,7 +22,7 @@
 	name = "decompilers"
 	attack_verb = list("swarmed")
 	_base_attack_force = 2
-	sharp = TRUE
+	_sharp = TRUE
 
 /datum/mob_controller/aggressive/commanded/nanomachines/do_process(time_elapsed)
 

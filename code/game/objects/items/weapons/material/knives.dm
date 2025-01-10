@@ -8,8 +8,8 @@
 	material = /decl/material/solid/metal/steel
 	origin_tech = @'{"materials":1}'
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	sharp = TRUE
-	edge = TRUE
+	_sharp = TRUE
+	_edge = TRUE
 	item_flags = ITEM_FLAG_CAN_HIDE_IN_SHOES | ITEM_FLAG_IS_WEAPON
 	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME
 	pickup_sound = 'sound/foley/knife1.ogg'
@@ -104,7 +104,7 @@
 	name = "meat hook"
 	desc = "A sharp, metal hook what sticks into things."
 	icon = 'icons/obj/items/weapon/knives/hook.dmi'
-	sharp = FALSE
+	_sharp = FALSE
 
 /obj/item/knife/ritual
 	name = "ritual knife"

@@ -171,7 +171,7 @@
 	gender = NEUTER
 	attack_verb = list("slashed", "tore into")
 	hitsound = 'sound/weapons/rapidslice.ogg'
-	edge = TRUE
+	_edge = TRUE
 	_base_attack_force = 25
 
 /mob/living/simple_animal/construct/wraith/mind_initialize()
@@ -257,7 +257,7 @@
 	gender = NEUTER
 	attack_verb = list("violently stabbed", "ran through")
 	hitsound = 'sound/weapons/pierce.ogg'
-	sharp = TRUE
+	_sharp = TRUE
 	_base_attack_force = 25
 
 ////////////////HUD//////////////////////

@@ -3,8 +3,8 @@
 	desc                = "It's used for removing weeds or scratching your back."
 	icon                = 'icons/obj/items/tool/hoes/hoe.dmi'
 	icon_state          = "preview"
-	sharp               = TRUE
-	edge                = TRUE
+	_sharp              = TRUE
+	_edge               = TRUE
 	attack_verb         = list("slashed", "sliced", "cut", "clawed")
 	material            = /decl/material/solid/metal/steel
 	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME

@@ -68,6 +68,7 @@
 	boiling_point = 2504
 	color = "#effffe"
 	reflectiveness = MAT_VALUE_SHINY
+	hardness = MAT_VALUE_VERY_HARD - 5 // Hard enough to whet steel.
 	sparse_material_weight = 3
 	rich_material_weight = 1
 	dissolves_into = list(

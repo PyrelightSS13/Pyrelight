@@ -16,17 +16,17 @@
 
 /obj/item/stick/attackby(obj/item/W, mob/user)
 
-	if(W.sharp && W.edge && !sharp)
+	if(W.is_sharp() && W.has_edge() && !_sharp)
 		user.visible_message("<span class='warning'>[user] sharpens [src] with [W].</span>", "<span class='warning'>You sharpen [src] using [W].</span>")
-		sharp = 1 //Sharpen stick
+		set_sharp(TRUE)
 		SetName("sharpened " + name)
 		update_attack_force()
 		return TRUE
 
-	if(!sharp && (istype(W, /obj/item/stack/material/bolt) || istype(W, /obj/item/stack/material/bundle)))
+	if(!_sharp && (istype(W, /obj/item/stack/material/bolt) || istype(W, /obj/item/stack/material/bundle)))
 
 		var/choice = input(user, "Do you want to make a torch, or a splint?", "Stick Crafting") as null|anything in list("Torch", "Splint")
-		if(!choice || QDELETED(user) || user.get_active_held_item() != W || QDELETED(W) || !QDELETED(src) || (loc != user && !Adjacent(user)) || sharp)
+		if(!choice || QDELETED(user) || user.get_active_held_item() != W || QDELETED(W) || !QDELETED(src) || (loc != user && !Adjacent(user)) || _sharp)
 			return TRUE
 
 		var/obj/item/stack/material/cloth = W

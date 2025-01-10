@@ -84,7 +84,7 @@
 	name = "giant horns"
 	attack_verb = list("brutalized")
 	_base_attack_force = 40
-	sharp = TRUE
+	_sharp = TRUE
 
 /obj/item/natural_weapon/goatking/fire
 	name = "burning horns"
@@ -105,7 +105,7 @@
 	name = "horns"
 	attack_verb = list("impaled", "stabbed")
 	_base_attack_force = 15
-	sharp = TRUE
+	_sharp = TRUE
 
 /mob/living/simple_animal/hostile/goat/guard/master
 	name = "master of the guard"
@@ -159,7 +159,7 @@
 	name = "horns"
 	attack_verb = list("impaled", "stabbed")
 	_base_attack_force = 15
-	sharp = TRUE
+	_sharp = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/goat/guard/master
 	name = "master of the guard"

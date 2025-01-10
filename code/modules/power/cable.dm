@@ -188,7 +188,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		shock(user, 5, 0.2)
 
 
-	else if(W.edge)
+	else if(W.has_edge())
 
 		var/delay_holder
 

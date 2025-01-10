@@ -6,8 +6,8 @@
 	icon = 'icons/obj/items/weapon/knives/folding/basic.dmi'
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("prodded", "tapped")
-	edge = FALSE
-	sharp = FALSE
+	_edge = FALSE
+	_sharp = FALSE
 	draw_handle = TRUE
 	valid_handle_colors = list(COLOR_DARK_GRAY, COLOR_RED_GRAY, COLOR_BLUE_GRAY, COLOR_DARK_BLUE_GRAY, COLOR_GREEN_GRAY, COLOR_DARK_GREEN_GRAY)
 	material = /decl/material/solid/metal/steel
@@ -29,15 +29,14 @@
 /obj/item/knife/folding/update_attack_force()
 	..()
 	if(open)
-		// TODO: check sharp/edge.
-		edge = TRUE
-		sharp = TRUE
+		set_edge(TRUE)
+		set_sharp(TRUE)
 		w_class = ITEM_SIZE_NORMAL
 		attack_verb = list("slashed", "stabbed")
 		..()
 	else
-		edge = initial(edge)
-		sharp = initial(sharp)
+		set_edge(initial(_edge))
+		set_sharp(initial(_sharp))
 		w_class = initial(w_class)
 		attack_verb = closed_attack_verbs
 

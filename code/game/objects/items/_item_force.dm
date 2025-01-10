@@ -13,18 +13,20 @@
 	VAR_PROTECTED/_hardness_force_factor    = 0.25
 
 /obj/item/proc/get_max_weapon_force()
-	. = get_attack_force()
+	. = get_attack_force(dry_run = TRUE)
 	if(can_be_twohanded)
 		. = round(. * _wielded_force_multiplier)
 
-/obj/item/proc/get_attack_force(mob/living/user)
+// `dry_run` param is used for things like the grindstone modpack to avoid
+// depleting sharpness when not actually being used to attack.
+/obj/item/proc/get_attack_force(mob/living/user, dry_run = FALSE)
 	if(_base_attack_force <= 0 || (item_flags & ITEM_FLAG_NO_BLUDGEON))
 		return 0
 	if(isnull(_cached_attack_force))
 		update_attack_force()
 	if(_cached_attack_force <= 0)
 		return 0
-	return istype(user) ? user.modify_attack_force(src, _cached_attack_force, _wielded_force_multiplier) : _cached_attack_force
+	return istype(user) ? user.modify_attack_force(src, _cached_attack_force, _wielded_force_multiplier, dry_run) : _cached_attack_force
 
 // Existing hitby() code expects mobs, structures and machines to be thrown, it seems.
 /atom/movable/proc/get_thrown_attack_force()
@@ -43,18 +45,6 @@
 	_cached_attack_force = null
 	_base_attack_force = new_force
 
-/obj/item/proc/set_edge(new_edge)
-	if(edge != new_edge)
-		edge = new_edge
-		return TRUE
-	return FALSE
-
-/obj/item/proc/set_sharp(new_sharp)
-	if(sharp != new_sharp)
-		sharp = new_sharp
-		return TRUE
-	return FALSE
-
 /obj/item/proc/update_attack_force()
 
 	// Get our base force.
@@ -66,14 +56,14 @@
 	// Check if this material is hard enough to hold an edge.
 	if(!material.can_hold_edge())
 		set_edge(FALSE)
-	else if(!edge)
-		set_edge(initial(edge))
+	else if(!_edge)
+		set_edge(initial(_edge))
 
 	// Check if this material can hold a point.
 	if(!material.can_hold_sharpness())
 		set_sharp(FALSE)
-	else if(!sharp)
-		set_sharp(initial(sharp))
+	else if(!_sharp)
+		set_sharp(initial(_sharp))
 
 	// Work out where we're going to cap our calculated force.
 	// Any additional force resulting from hardness or weight turn into armour penetration.
@@ -108,10 +98,17 @@
 	return _cached_attack_force
 
 // TODO: consider strength, athletics, mob size
-/mob/living/proc/modify_attack_force(obj/item/weapon, supplied_force, wield_mult)
+// `dry_run` param used in grindstone modpack to avoid depleting sharpness on non-attacks.
+/mob/living/proc/modify_attack_force(obj/item/weapon, supplied_force, wield_mult, dry_run)
 	if(!istype(weapon) || !weapon.is_held_twohanded())
-		return supplied_force
-	return round(supplied_force * wield_mult)
+		. = supplied_force
+	else
+		. = supplied_force * wield_mult
+	var/list/item_effects = weapon.get_item_effects(IE_CAT_DAMAGE)
+	if(length(item_effects))
+		for(var/decl/item_effect/damage_effect as anything in item_effects)
+			. = damage_effect.modify_attack_damage(., weapon, src, dry_run, item_effects[damage_effect])
+	return round(.)
 
 // Debug proc - leaving in for future work. Linter hates protected var access so leave commented.
 /*
@@ -155,7 +152,7 @@
 			(attk_force + expected_material_mod),
 			(attk_force * item._wielded_force_multiplier),
 			item.armor_penetration,
-			(item.sharp||item.edge)
+			(item._sharp|item._edge)
 		), "|")
 
 	text2file(jointext(rows, "\n"), "weapon_stats_dump.csv")

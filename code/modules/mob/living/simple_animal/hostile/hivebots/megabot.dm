@@ -42,8 +42,8 @@
 	name = "giant circular saw"
 	attack_verb = list("sawed", "ripped")
 	_base_attack_force = 15
-	sharp = TRUE
-	edge = TRUE
+	_sharp = TRUE
+	_edge = TRUE
 
 /mob/living/simple_animal/hostile/hivebot/mega/Initialize()
 	. = ..()

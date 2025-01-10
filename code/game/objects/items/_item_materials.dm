@@ -12,7 +12,7 @@
 
 /obj/item/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
 	. = ..()
-	if(material && (material.is_brittle() || target.get_blocked_ratio(hit_zone, BRUTE, damage_flags(), armor_penetration, get_attack_force(user)) * 100 >= material.hardness/5))
+	if(material && (material.is_brittle() || target.get_blocked_ratio(hit_zone, BRUTE, damage_flags(), armor_penetration, get_attack_force(user, dry_run = TRUE)) * 100 >= material.hardness/5))
 		apply_wear()
 
 /obj/item/on_parry(mob/user, damage_source, mob/attacker)

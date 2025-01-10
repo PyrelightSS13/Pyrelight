@@ -43,7 +43,7 @@
 
 	var/damage = W.get_attack_force(user) / 4
 
-	if(W.edge)
+	if(W.has_edge())
 		damage += 5
 
 	if(IS_WELDER(W))

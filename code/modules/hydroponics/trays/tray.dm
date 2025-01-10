@@ -491,15 +491,16 @@
 		to_chat(user, "You [anchored ? "wrench" : "unwrench"] \the [src].")
 		return TRUE
 
-	var/force = O.get_attack_force(user)
-	if(force && seed)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.visible_message("<span class='danger'>\The [seed.display_name] has been attacked by [user] with \the [O]!</span>")
-		playsound(get_turf(src), O.hitsound, 100, 1)
-		if(!dead)
-			plant_health -= force
-			check_plant_health()
-		return TRUE
+	if(seed)
+		var/force = O.get_attack_force(user)
+		if(force)
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+			user.visible_message("<span class='danger'>\The [seed.display_name] has been attacked by [user] with \the [O]!</span>")
+			playsound(get_turf(src), O.hitsound, 100, 1)
+			if(!dead)
+				plant_health -= force
+				check_plant_health()
+			return TRUE
 
 	if(mechanical)
 		return component_attackby(O, user)
@@ -682,7 +683,7 @@
 	name = "Sample Plant"
 
 /decl/interaction_handler/hydroponics/sample/is_possible(atom/target, mob/user, obj/item/prop)
-	return ..() && istype(prop) && prop.edge && prop.w_class < ITEM_SIZE_NORMAL
+	return ..() && istype(prop) && prop.has_edge() && prop.w_class < ITEM_SIZE_NORMAL
 
 /decl/interaction_handler/hydroponics/sample/invoked(atom/target, mob/user, obj/item/prop)
 	var/obj/machinery/portable_atmospherics/hydroponics/tray = target

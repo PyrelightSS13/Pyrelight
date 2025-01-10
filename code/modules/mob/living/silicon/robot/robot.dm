@@ -626,7 +626,7 @@
 			else
 				to_chat(user, "Upgrade error!")
 		return TRUE
-	if(!(istype(W, /obj/item/robotanalyzer) || istype(W, /obj/item/scanner/health)) && W.get_attack_force(user) && !user.check_intent(I_FLAG_HELP))
+	if(!(istype(W, /obj/item/robotanalyzer) || istype(W, /obj/item/scanner/health)) && !user.check_intent(I_FLAG_HELP) && W.get_attack_force(user))
 		spark_at(src, 5, holder=src)
 	return ..()
 

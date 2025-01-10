@@ -55,7 +55,7 @@
 	name = "scalpel"
 	desc = "A short, wickedly sharp blade used for making incisions and cutting through flesh."
 	icon = 'icons/obj/items/surgery/scalpel.dmi'
-	sharp = TRUE
+	_sharp = TRUE
 	_base_attack_force = 8
 
 /obj/item/ancient_surgery/scalpel/get_tool_properties()
