@@ -35,36 +35,6 @@
 		pass("All jobs had outfit types.")
 	return 1
 
-/datum/unit_test/jobs_shall_have_a_HUD_icon
-	name = "JOB: Shall have a HUD icon"
-
-/datum/unit_test/jobs_shall_have_a_HUD_icon/start_test()
-	var/failed_jobs = 0
-	var/failed_sanity_checks = 0
-
-	var/list/job_huds = get_states_in_icon_cached(global.using_map.id_hud_icons)
-
-	if(!job_huds[""])
-		log_bad("Sanity Check - Missing default/unnamed HUD icon")
-		failed_sanity_checks++
-
-	if(!job_huds["hudunknown"])
-		log_bad("Sanity Check - Missing HUD icon: hudunknown")
-		failed_sanity_checks++
-
-	for(var/job_name in SSjobs.titles_to_datums)
-		var/datum/job/J = SSjobs.titles_to_datums[job_name]
-		var/hud_icon_state = J.hud_icon
-		if(!job_huds[hud_icon_state])
-			log_bad("[J.title] - Missing HUD icon: [hud_icon_state]")
-			failed_jobs++
-
-	if(failed_sanity_checks || failed_jobs)
-		fail("[global.using_map.id_hud_icons] - [failed_sanity_checks] failed sanity check\s, [failed_jobs] job\s with missing HUD icon.")
-	else
-		pass("All jobs have a HUD icon.")
-	return 1
-
 /datum/unit_test/jobs_shall_have_a_unique_title
 	name = "JOBS: All Job Datums Shall Have A Unique Title"
 

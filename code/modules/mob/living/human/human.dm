@@ -5,14 +5,12 @@
 	icon_state = "body_m_s"
 	mob_sort_value = 6
 	max_health = 150
-
-	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
 
 /mob/living/human/Initialize(mapload, species_name, datum/mob_snapshot/supplied_appearance)
 
 	current_health = max_health
-	setup_hud_overlays()
+	reset_hud_overlays()
 	var/list/newargs = args.Copy(2)
 	setup_human(arglist(newargs))
 	global.human_mob_list |= src
@@ -31,18 +29,6 @@
 
 	if(. != INITIALIZE_HINT_QDEL)
 		post_setup(arglist(newargs))
-
-/mob/living/human/proc/setup_hud_overlays()
-	hud_list[HEALTH_HUD]      = new /image/hud_overlay('icons/mob/hud_med.dmi', src, "100")
-	hud_list[STATUS_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
-	hud_list[LIFE_HUD]	      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
-	hud_list[ID_HUD]          = new /image/hud_overlay(global.using_map.id_hud_icons, src, "hudunknown")
-	hud_list[WANTED_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[IMPCHEM_HUD]     = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[IMPTRACK_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[STATUS_HUD_OOC]  = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 
 /mob/living/human/Destroy()
 	global.human_mob_list -= src

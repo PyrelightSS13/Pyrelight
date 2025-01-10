@@ -2879,6 +2879,7 @@
 #include "code\modules\mob\living\living_give.dm"
 #include "code\modules\mob\living\living_grabs.dm"
 #include "code\modules\mob\living\living_hallucinations.dm"
+#include "code\modules\mob\living\living_hud.dm"
 #include "code\modules\mob\living\living_maneuvers.dm"
 #include "code\modules\mob\living\living_organs.dm"
 #include "code\modules\mob\living\living_powers.dm"

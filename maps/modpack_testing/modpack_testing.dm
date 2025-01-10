@@ -3,6 +3,7 @@
 	#include "modpack_testing_lobby.dm"
 	#include "blank.dmm"
 
+
 	#include "../../mods/gamemodes/cult/_cult.dme"
 	#include "../../mods/gamemodes/heist/_heist.dme"
 	#include "../../mods/gamemodes/meteor/_meteor.dme"
@@ -15,6 +16,7 @@
 	#include "../../mods/content/mundane.dm"
 	#include "../../mods/content/scaling_descriptors.dm"
 	#include "../../mods/content/tabloids/_tabloids.dme"
+	#include "../../mods/content/standard_jobs/_standard_jobs.dme"
 	#include "../../mods/content/dungeon_loot/_dungeon_loot.dme"
 	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/byond_membership/_byond_membership.dm"
