@@ -58,6 +58,8 @@
 		UI_ICON_UP_HINT     = 'icons/mob/screen/styles/white/uphint.dmi',
 		UI_ICON_ZONE_SELECT = 'icons/mob/screen/styles/white/zone_selector.dmi'
 	)
+	use_overlay_color = TRUE
+	use_ui_color      = TRUE
 
 /decl/ui_style/minimalist
 	name = "Minimalist"
@@ -72,3 +74,31 @@
 		UI_ICON_UP_HINT     = 'icons/mob/screen/styles/minimalist/uphint.dmi',
 		UI_ICON_ZONE_SELECT = 'icons/mob/screen/styles/minimalist/zone_selector.dmi'
 	)
+	use_overlay_color = TRUE
+	use_ui_color      = TRUE
+
+/decl/ui_style/underworld
+	name = "Underworld"
+	uid  = "ui_style_underworld"
+	restricted = FALSE
+	icons = list(
+		UI_ICON_ATTACK      = 'icons/mob/screen/styles/underworld/attack_selector.dmi',
+		UI_ICON_FIRE_INTENT = 'icons/mob/screen/styles/underworld/fire_intent.dmi',
+		UI_ICON_HANDS       = 'icons/mob/screen/styles/underworld/hands.dmi',
+		UI_ICON_HEALTH      = 'icons/mob/screen/styles/health.dmi',
+		UI_ICON_CRIT_MARKER = 'icons/mob/screen/styles/crit_markers.dmi',
+		UI_ICON_HYDRATION   = 'icons/mob/screen/styles/hydration.dmi',
+		UI_ICON_INTENT      = 'icons/mob/screen/styles/intents.dmi',
+		UI_ICON_INTERACTION = 'icons/mob/screen/styles/underworld/interaction.dmi',
+		UI_ICON_INTERNALS   = 'icons/mob/screen/styles/internals.dmi',
+		UI_ICON_INVENTORY   = 'icons/mob/screen/styles/underworld/inventory.dmi',
+		UI_ICON_MOVEMENT    = 'icons/mob/screen/styles/underworld/movement.dmi',
+		UI_ICON_NUTRITION   = 'icons/mob/screen/styles/nutrition.dmi',
+		UI_ICON_STATUS_FIRE = 'icons/mob/screen/styles/status_fire.dmi',
+		UI_ICON_STATUS      = 'icons/mob/screen/styles/status.dmi',
+		UI_ICON_UP_HINT     = 'icons/mob/screen/styles/underworld/uphint.dmi',
+		UI_ICON_ZONE_SELECT = 'icons/mob/screen/styles/underworld/zone_selector.dmi',
+		UI_ICON_CHARGE      = 'icons/mob/screen/styles/charge.dmi'
+	)
+	use_overlay_color = TRUE
+	use_ui_color = TRUE

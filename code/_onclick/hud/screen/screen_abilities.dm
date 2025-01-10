@@ -1,9 +1,10 @@
 /obj/screen/ability_master
-	name              = "Abilities"
-	icon              = 'icons/mob/screen/spells.dmi'
-	icon_state        = "grey_spell_ready"
-	screen_loc        = ui_ability_master
-	requires_ui_style = FALSE
+	name                 = "Abilities"
+	icon                 = 'icons/mob/screen/spells.dmi'
+	icon_state           = "grey_spell_ready"
+	screen_loc           = ui_ability_master
+	requires_ui_style    = FALSE
+	apply_screen_overlay = FALSE
 	var/list/obj/screen/ability/ability_objects = list()
 	var/list/obj/screen/ability/spell_objects = list()
 	var/showing = FALSE // If we're 'open' or not.
@@ -81,6 +82,7 @@
 		i++
 
 /obj/screen/ability_master/on_update_icon()
+	..()
 	if(ability_objects.len)
 		set_invisibility(INVISIBILITY_NONE)
 	else
@@ -154,6 +156,7 @@
 	maptext_x = 3
 	requires_owner = FALSE
 	requires_ui_style = FALSE
+	apply_screen_overlay = FALSE
 	var/background_base_state = "grey"
 	var/ability_icon_state = null
 	var/obj/screen/ability_master/ability_master
@@ -171,10 +174,13 @@
 	return ..()
 
 /obj/screen/ability/on_update_icon()
-	overlays.Cut()
+	..()
 	icon_state = "[background_base_state]_spell_base"
 
-	overlays += ability_icon_state
+/obj/screen/ability/rebuild_screen_overlays()
+	..()
+	if(ability_icon_state)
+		add_overlay(ability_icon_state)
 
 /obj/screen/ability/handle_click(mob/user, params)
 	activate()
@@ -236,47 +242,39 @@
 	for(var/obj/screen/ability/spell/spell in spell_objects)
 		spell.update_charge(forced)
 
+/obj/screen/ability/spell/on_update_icon(forced)
+	. = ..()
+	if(!spell)
+		return
+	update_charge(forced)
+	if(spell.charge_type == Sp_RECHARGE || spell.charge_type == Sp_CHARGES)
+		if(spell.charge_counter < spell.charge_max)
+			icon_state = "[spell_base]_spell_base"
+		else
+			icon_state = "[spell_base]_spell_ready"
+	else
+		icon_state = "[spell_base]_spell_ready"
+
+/obj/screen/ability/spell/rebuild_screen_overlays()
+	..()
+	if(!spell)
+		return
+	if((spell.charge_type == Sp_RECHARGE || spell.charge_type == Sp_CHARGES) && spell.charge_counter < spell.charge_max && spell.charge_counter > 0)
+		var/icon/partial_charge = icon(icon, "[spell_base]_spell_ready")
+		partial_charge.Crop(1, 1, partial_charge.Width(), round(partial_charge.Height() * spell.charge_counter / spell.charge_max))
+		add_overlay(partial_charge)
+	add_overlay(spell.hud_state)
+	if(spell.silenced)
+		add_overlay("silence")
+
 /obj/screen/ability/spell/proc/update_charge(var/forced_update = 0)
 	if(!spell)
 		qdel(src)
 		return
-
 	if(last_charge == spell.charge_counter && !forced_update)
 		return //nothing to see here
-
-	overlays -= spell.hud_state
-
-	if(spell.charge_type == Sp_RECHARGE || spell.charge_type == Sp_CHARGES)
-		if(spell.charge_counter < spell.charge_max)
-			icon_state = "[spell_base]_spell_base"
-			if(spell.charge_counter > 0)
-				var/icon/partial_charge = icon(src.icon, "[spell_base]_spell_ready")
-				partial_charge.Crop(1, 1, partial_charge.Width(), round(partial_charge.Height() * spell.charge_counter / spell.charge_max))
-				overlays += partial_charge
-				if(last_charged_icon)
-					overlays -= last_charged_icon
-				last_charged_icon = partial_charge
-			else if(last_charged_icon)
-				overlays -= last_charged_icon
-				last_charged_icon = null
-		else
-			icon_state = "[spell_base]_spell_ready"
-			if(last_charged_icon)
-				overlays -= last_charged_icon
-	else
-		icon_state = "[spell_base]_spell_ready"
-
-	overlays += spell.hud_state
-
 	last_charge = spell.charge_counter
-
-	overlays -= "silence"
-	if(spell.silenced)
-		overlays += "silence"
-
-/obj/screen/ability/spell/on_update_icon(var/forced = 0)
-	update_charge(forced)
-	return
+	update_icon()
 
 /obj/screen/ability/spell/activate()
 	spell.perform(usr)

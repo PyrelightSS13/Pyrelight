@@ -26,6 +26,8 @@
 	)
 	/// A subset of UI keys to icon files used to override the above.
 	var/list/override_icons
+	var/use_overlay_color = FALSE
+	var/use_ui_color      = FALSE
 
 /decl/ui_style/Initialize()
 	for(var/ui_key in override_icons)
@@ -49,8 +51,13 @@
 		var/list/remaining_states = get_states_in_icon(check_icon)
 		for(var/check_state in checking_states)
 			remaining_states -= check_state
-			if(!check_state_in_icon(check_state, check_icon))
+			if(check_state_in_icon(check_state, check_icon))
+				check_state = "[check_state]-overlay"
+				if(check_state_in_icon(check_state, check_icon))
+					remaining_states -= check_state
+			else
 				missing_states |= check_state
+
 		if(length(remaining_states))
 			. += "icon [check_icon] for key [ui_key] has extraneous states: '[jointext(remaining_states, "', '")]'"
 		if(length(missing_states))
