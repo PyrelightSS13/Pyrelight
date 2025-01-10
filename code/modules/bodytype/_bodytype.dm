@@ -43,6 +43,8 @@ var/global/list/bodytypes_by_category = list()
 	var/surgery_overlay_icon = 'icons/mob/surgery.dmi'
 	/// Used to retrieve bodytypes by pronoun type in get_bodytype_by_pronouns()
 	var/associated_gender
+	// Preview in prefs positioning. If null, uses defaults set on a static list in preferences.dm.
+	var/list/character_preview_screen_locs
 	/// Appearance/display related features.
 	var/appearance_flags     = 0
 	/// What noun is used when filing your nails?
