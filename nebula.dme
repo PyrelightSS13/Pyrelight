@@ -2215,6 +2215,7 @@
 #include "code\modules\codex\entries\weapons.dm"
 #include "code\modules\crafting\handmade_fancy.dm"
 #include "code\modules\crafting\handmade_items.dm"
+#include "code\modules\crafting\forging\bellows.dm"
 #include "code\modules\crafting\metalwork\metalwork_items.dm"
 #include "code\modules\crafting\pottery\pottery_moulds.dm"
 #include "code\modules\crafting\pottery\pottery_structures.dm"

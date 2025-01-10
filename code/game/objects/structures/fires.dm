@@ -70,7 +70,8 @@
 	var/lit = FIRE_OUT
 	/// How much fuel is left?
 	var/fuel = 0
-
+	/// Have we been fed by a bellows recently?
+	var/bellows_oxygenation = 0
 
 /obj/structure/fire_source/Initialize()
 	. = ..()
@@ -138,6 +139,7 @@
 
 /obj/structure/fire_source/proc/die()
 	if(lit == FIRE_LIT)
+		bellows_oxygenation = 0
 		lit = FIRE_DEAD
 		last_fuel_ignite_temperature = null
 		last_fuel_burn_temperature = T20C
@@ -386,7 +388,9 @@
 		return 0
 	var/ambient_temperature = get_ambient_temperature(absolute = TRUE)
 	// The effective burn temperature can't go below ambient (no cold flames) or above the actual burn temperature.
-	return clamp((last_fuel_burn_temperature - T0C) * draught_mult + T0C, ambient_temperature, last_fuel_burn_temperature)
+	. = clamp((last_fuel_burn_temperature - T0C) * draught_mult + T0C, ambient_temperature, last_fuel_burn_temperature)
+	if(bellows_oxygenation)
+		. = round(. * 1.25) // Burns 25% hotter while oxygenated.
 
 // If absolute == TRUE, return our actual ambient temperature, otherwise return our effective burn temperature when lit.
 /obj/structure/fire_source/get_ambient_temperature(absolute = FALSE)
@@ -412,6 +416,10 @@
 	if(!check_atmos())
 		die()
 		return
+
+	// Spend our bellows charge.
+	if(bellows_oxygenation > 0)
+		bellows_oxygenation--
 
 	fuel -= (FUEL_CONSUMPTION_CONSTANT * get_draught_multiplier())
 	if(!process_fuel())
@@ -461,7 +469,7 @@
 
 	switch(lit)
 		if(FIRE_LIT)
-			if(fuel >= HIGH_FUEL)
+			if(bellows_oxygenation || fuel >= HIGH_FUEL)
 				var/image/I = image(icon, "[icon_state]_lit")
 				I.appearance_flags |= RESET_COLOR | RESET_ALPHA | KEEP_APART
 				add_overlay(I)
