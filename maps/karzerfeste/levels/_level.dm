@@ -12,37 +12,6 @@
 		/decl/material/gas/nitrogen = MOLES_N2STANDARD
 	)
 	template_edge_padding = 0 // we use a strictly delineated subarea, no need for this guard
-	var/submap_budget   = 0
-	var/submap_category = null
-	var/submap_area
-	var/list/mobs_to_spawn = list()
-
-
-/datum/level_data/main_level/karzerfeste/get_subtemplate_areas(template_category, blacklist, whitelist)
-	return submap_area ? (islist(submap_area) ? submap_area : list(submap_area)) : null
-
-/datum/level_data/main_level/karzerfeste/get_subtemplate_budget()
-	return submap_budget
-
-/datum/level_data/main_level/karzerfeste/get_subtemplate_category()
-	return submap_category
-
-/datum/level_data/main_level/karzerfeste/after_generate_level()
-	. = ..()
-	if(length(mobs_to_spawn))
-		for(var/list/mob_category in mobs_to_spawn)
-			var/list/mob_types = mob_category[1]
-			var/mob_turf  = mob_category[2]
-			var/mob_count = mob_category[3]
-			var/sanity = 1000
-			while(mob_count && sanity)
-				sanity--
-				var/turf/place_mob_at = locate(rand(level_inner_min_x, level_inner_max_x), rand(level_inner_min_y, level_inner_max_y), level_z)
-				if(istype(place_mob_at, mob_turf) && !(locate(/mob/living) in place_mob_at))
-					var/mob_type = pickweight(mob_types)
-					new mob_type(place_mob_at)
-					mob_count--
-					CHECK_TICK
 
 /datum/daycycle/karzerfeste
 	cycle_duration = 2 HOURS // 1 hour of daylight, 1 hour of night
@@ -61,9 +30,9 @@
 		/datum/random_map/noise/ore/rich,
 		/datum/random_map/noise/karzerfeste/caves
 	)
-	submap_budget = 30
-	submap_category = MAP_TEMPLATE_CATEGORY_KARZ_DUNGEON
-	submap_area = /area/karzerfeste/caves/poi
+	subtemplate_budget = 30
+	subtemplate_category = MAP_TEMPLATE_CATEGORY_KARZ_DUNGEON
+	subtemplate_area = /area/karzerfeste/caves/poi
 
 /datum/level_data/main_level/karzerfeste/surface
 	name = "Karzerfeste - Surface"
@@ -95,11 +64,19 @@
 	connected_levels = list(
 		"karzerfeste_keep" = EAST
 	)
+	subtemplate_budget   = 30
+	subtemplate_category = MAP_TEMPLATE_CATEGORY_FANTASY_WOODS
+	subtemplate_area     = /area/karzerfeste/outside/forest/woods
+
 	level_generators = list(
 		/datum/random_map/noise/karzerfeste/woods,
 		/datum/random_map/noise/forage/karzerfeste/woods
 	)
-	mobs_to_spawn = list(
+	daycycle_type = /datum/daycycle/karzerfeste
+	daycycle_id = "daycycle_karzerfeste"
+
+/datum/level_data/main_level/karzerfeste/woods/get_mobs_to_populate_level()
+	var/static/list/mobs_to_spawn = list(
 		list(
 			list(
 				/mob/living/simple_animal/passive/mouse/white = 10,
@@ -110,8 +87,7 @@
 			10
 		)
 	)
-	daycycle_type = /datum/daycycle/karzerfeste
-	daycycle_id = "daycycle_karzerfeste"
+	return mobs_to_spawn
 
 /obj/abstract/level_data_spawner/karzerfeste_caves
 	level_data_type = /datum/level_data/main_level/karzerfeste/caves
