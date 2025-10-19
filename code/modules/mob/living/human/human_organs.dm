@@ -156,24 +156,11 @@
 			LAZYDISTINCTADD(bad_external_organs, E)
 
 /mob/living/human/proc/check_vital_organ_missing()
-	// Undead don't care about missing internal organs.
-	if(has_trait(/decl/trait/undead))
-		return FALSE
 	return get_bodytype()?.check_vital_organ_missing(src)
 
-/mob/living/human/should_have_organ(organ_to_check)
-	// It might be nice to have eyes etc. matter for zombies, but as all organs are dead it won't work currently.
-	return has_trait(/decl/trait/undead) ? FALSE : ..()
-
 /mob/living/human/proc/process_internal_organs()
-	if(has_trait(/decl/trait/undead))
-		return
 	for(var/obj/item/organ/I in internal_organs)
 		I.Process()
-
-/mob/living/human/get_vision_organ_tag()
-	 // Where we're going, we don't need eyes.
-	return has_trait(/decl/trait/undead) ? null : ..()
 
 // Takes care of organ related updates, such as broken and missing limbs
 /mob/living/human/proc/handle_organs()

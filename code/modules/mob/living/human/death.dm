@@ -1,7 +1,5 @@
 /mob/living/human/gib(do_gibs = TRUE)
 	var/turf/my_turf = get_turf(src)
-	if(do_gibs && has_trait(/decl/trait/undead, TRAIT_LEVEL_MODERATE))
-		do_gibs = FALSE
 	. = ..(do_gibs)
 	if(.)
 		for(var/obj/item/organ/I in get_internal_organs())
@@ -18,14 +16,9 @@
 				E.throw_at(get_edge_target_turf(E, pick(global.alldirs)), rand(1,3), THROWFORCE_GIBS)
 
 /mob/living/human/get_death_message(gibbed)
-	if(has_trait(/decl/trait/undead, TRAIT_LEVEL_MODERATE))
-		return "crumbles and falls apart!"
 	if(get_config_value(/decl/config/toggle/health_show_human_death_message))
 		return species.get_species_death_message(src) || "seizes up and falls limp..."
 	return ..()
-
-/mob/living/human/get_self_death_message(gibbed)
-	return has_trait(/decl/trait/undead, TRAIT_LEVEL_MODERATE) ? "You have crumbled." : ..()
 
 /mob/living/human/death(gibbed)
 	if(!(. = ..()))
@@ -42,12 +35,6 @@
 		handle_organs()
 	if(SSticker.mode)
 		SSticker.mode.check_win()
-
-	if(!QDELETED(src) && !gibbed && has_trait(/decl/trait/undead, TRAIT_LEVEL_MODERATE))
-		gib()
-
-/mob/living/human/get_gibber_type()
-	return has_trait(/decl/trait/undead, TRAIT_LEVEL_MODERATE) ? null : ..()
 
 /mob/living/human/physically_destroyed(var/skip_qdel, var/droplimb_type = DISMEMBER_METHOD_BLUNT)
 	for(var/obj/item/organ/external/limb in get_external_organs())

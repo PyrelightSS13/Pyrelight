@@ -20,8 +20,5 @@
 #include "plants\plants_fruit_template.dm"
 #include "plants\fruit_subtypes\nightweave.dm"
 #include "plants\plant_subtypes\nightweave.dm"
-#include "undead\undead.dm"
-#include "undead\undead_skeleton.dm"
-#include "undead\undead_zombie.dm"
 #endif
 // END_INCLUDE

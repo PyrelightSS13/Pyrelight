@@ -11,3 +11,7 @@
 #ifdef MODPACK_BLACKSMITHY
 #include "fantasy/forging_fantasy.dm"
 #endif
+
+#ifdef MODPACK_UNDEAD
+#include "fantasy/undead_fantasy.dm"
+#endif

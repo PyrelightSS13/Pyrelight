@@ -443,9 +443,7 @@
 	return bodytype && !(bodytype.body_flags & BODY_FLAG_NO_PAIN) && !(status & ORGAN_DEAD)
 
 /obj/item/organ/proc/is_usable()
-	. = !(status & (ORGAN_CUT_AWAY|ORGAN_MUTATED))
-	if(. && (status & ORGAN_DEAD))
-		return owner?.has_trait(/decl/trait/undead)
+	return !(status & (ORGAN_CUT_AWAY|ORGAN_MUTATED|ORGAN_DEAD))
 
 /obj/item/organ/proc/can_recover()
 	return (max_damage > 0) && !(status & ORGAN_DEAD) || death_time >= REALTIMEOFDAY - ORGAN_RECOVERY_THRESHOLD

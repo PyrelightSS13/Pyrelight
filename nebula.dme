@@ -4092,7 +4092,6 @@
 #include "maps\~mapsystem\maps_unit_testing.dm"
 #include "maps\~unit_tests\unit_testing.dm"
 #include "mods\_modpack.dm"
-#include "mods\pyrelight\undead\_undead.dm"
 #include "mods\~compatibility\~compatibility.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE
