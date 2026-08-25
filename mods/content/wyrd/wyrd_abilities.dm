@@ -38,6 +38,7 @@
 		var/decl/anima/anima = GET_DECL(atype)
 		to_chat(user, anima.get_personal_anima_description(avalue, user.get_background_datum(/decl/background_category/faction)))
 
+/*
 /mob/living/verb/debug_anima_verb()
 	set name = "Debug Anima"
 	set category = "Debug"
@@ -51,3 +52,4 @@
 	add_ability(/decl/ability/wyrd/spell/flash)
 	add_ability(/decl/ability/wyrd/spell/gloom)
 	add_ability(/decl/ability/wyrd/spell/flare)
+*/

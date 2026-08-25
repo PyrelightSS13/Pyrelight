@@ -86,9 +86,6 @@
 	var/mob/living/_our_owner
 	VAR_PRIVATE/mob/living/_our_animal
 
-/obj/item/clothing/mask/ghost_caul/proc/set_animal(mob/living/_new_animal)
-	_our_animal = _new_animal
-
 /obj/item/clothing/mask/ghost_caul/get_preview_screen_locs()
 	var/static/list/override_preview_screen_locs = list(
 		"1" = "character_preview_map:1,4:36",
@@ -141,11 +138,11 @@
 
 	// Keep a reference to our human to avoid them getting GC'd in nullspace.
 	if(istype(target, mask.transformation_mob_type))
-		mask.set_animal(src)
+		mask._our_owner = src
 		drop_from_inventory(mask)
 		mask.forceMove(target)
 	else
-		mask.set_animal(null)
+		mask._our_owner = null
 		mask.forceMove(get_turf(target))
 		target.equip_to_slot_or_store_or_drop(mask, slot_wear_mask_str)
 
